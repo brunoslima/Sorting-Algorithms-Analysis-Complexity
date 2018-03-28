@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1448571767 source:c:\users\bruno\documents\ciência da computação - unesp\2º ano\2º semestre\projeto e análise de algoritmos\trabalhos\1º bimestre\algoritmosdeordenacao\algoritmosdeordenacao\ordenação.c
+	"Ordenação.h"
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1448751522 c:\users\bruno\documents\ciência da computação - unesp\2º ano\2º semestre\projeto e análise de algoritmos\trabalhos\1º bimestre\algoritmosdeordenacao\algoritmosdeordenacao\ordenação.h
+
+1448674024 source:c:\users\bruno\documents\ciência da computação - unesp\2º ano\2º semestre\projeto e análise de algoritmos\trabalhos\1º bimestre\algoritmosdeordenacao\algoritmosdeordenacao\main.c
+	"Ordenação.h"
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<time.h>
+	<windows.h>
+
