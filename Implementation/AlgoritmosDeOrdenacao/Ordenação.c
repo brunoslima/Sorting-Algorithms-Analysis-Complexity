@@ -62,7 +62,7 @@ void gerarArquivoElementosAleatorios(){
 
 }
 
-void Troca(int* a, int* b){
+void Swap(int* a, int* b){
 
     int aux = *a;
     *a = *b;
@@ -73,13 +73,14 @@ void Troca(int* a, int* b){
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 
-void SimpleBubbleSort(int* vetor){
+void BubbleSort(int* vetor){
 
     int i, j;
-    for(i = 1; i < MAX; i++)
-        for(j = 0; j < (MAX-i); j++)
-            if (vetor[j+1] < vetor[j])
-                Troca(vetor+j, vetor+j+1);
+    for(i = 1; i < MAX; i++){
+        for(j = 0; j < (MAX-i); j++){
+            if (vetor[j+1] < vetor[j]) Swap(vetor+j, vetor+j+1);
+        }
+    }
 
 }
 
@@ -96,12 +97,13 @@ void AdvancedBubbleSort(int* vetor){
         for(j = 0; j < (MAX-i); j++){
 
             if ( vetor[j+1] < vetor[j] ){
-                Troca(vetor+j, vetor+j+1);
+                Swap(vetor+j, vetor+j+1);
                 troca = 1;
             }
         }
         i++;
     }
+
 }
 
 
@@ -127,7 +129,7 @@ int ParticionarInicio(int *vetor, int esq, int dir){
 
         while(vetor[inicio] <= pivo && inicio < dir) inicio++;
         while(vetor[fim] > pivo && fim > esq) fim--;
-        if(inicio < fim) Troca(vetor+inicio, vetor+fim);
+        if(inicio < fim) Swap(vetor+inicio, vetor+fim);
     }
     vetor[esq] = vetor[fim];
     vetor[fim] = pivo;
@@ -140,17 +142,17 @@ int ParticionarInicio(int *vetor, int esq, int dir){
 
 void QuickSortPivoCentral(int *vetor, int n){
 
-    Ordenar(vetor, 0, n-1);
+    Sort(vetor, 0, n-1);
 }
 
 
-void Ordenar(int *vetor, int esq, int dir){
+void Sort(int *vetor, int esq, int dir){
 
     int inicio, fim;
 
     ParticionarCentral(vetor, esq, dir, &inicio, &fim);
-    if(esq < fim) Ordenar(vetor, esq, fim);
-    if(inicio < dir) Ordenar(vetor, inicio, dir);
+    if(esq < fim) Sort(vetor, esq, fim);
+    if(inicio < dir) Sort(vetor, inicio, dir);
 }
 
 
@@ -164,7 +166,7 @@ void ParticionarCentral(int *vetor, int esq, int dir, int *inicio, int *fim){
         while(*fim > esq && pivo < vetor[*fim]) (*fim)--;
 
         if(*inicio <= *fim){
-            Troca(vetor+(*inicio), vetor+(*fim));
+            Swap(vetor+(*inicio), vetor+(*fim));
             (*inicio)++;
             (*fim)--;
         }
@@ -282,7 +284,7 @@ void SelectionSort(int* vetor){
             if ( vetor[j] < vetor[indice] ) indice = j;
         }
 
-        if (indice != i) Troca(vetor+i, vetor+indice);
+        if (indice != i) Swap(vetor+i, vetor+indice);
     }
 
 }
@@ -294,15 +296,18 @@ void SelectionSort(int* vetor){
 void HeapSort(int* vetor){
 
     int p, m;
+
     for(p = MAX/2; p >= 0; p--){
+
         MaxHeap(vetor, p, MAX);
     }
 
     for(m = MAX; m >= 1; m--){
 
-        Troca(vetor, vetor+m);
+        Swap(vetor, vetor+m);
         MaxHeap(vetor, 0, m-1);
     }
+
 }
 
 
@@ -315,6 +320,7 @@ void MaxHeap(int* vetor, int p, int m){
         if(x >= vetor[f]) break;
         vetor[p] = vetor[f];
         p = f, f = 2*p+1;
+
     }
 
     vetor[p] = x;
@@ -334,6 +340,7 @@ void MergeSort(int* vetor, int p, int r){
         MergeSort(vetor, p, q);
         MergeSort(vetor, q, r);
         Merge(vetor, p, q, r);
+
     }
 }
 
