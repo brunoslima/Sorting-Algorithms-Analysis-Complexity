@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  30 MAR 2018 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  30 MAR 2018 14:44
 entering extended mode
 **./article.tex
 (article.tex
@@ -595,20 +595,20 @@ G,.JBIG2,.JB2,.eps]
 <images/bubble.png, id=1, 292.09125pt x 219.06844pt>
 File: images/bubble.png Graphic file (type png)
 <use images/bubble.png>
-Package pdftex.def Info: images/bubble.png  used on input line 90.
+Package pdftex.def Info: images/bubble.png  used on input line 91.
 (pdftex.def)             Requested size: 206.39685pt x 154.80092pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
@@ -616,93 +616,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
 
  <./images/bubble.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
  \OT1/ptm/m/it/10 1) In-ser-tion Sort: [][] \OT1/ptm/m/n/10 A es-trat[]egia de 
 ordena[][]ao por
  []
 
 
-Underfull \hbox (badness 4454) in paragraph at lines 123--124
+Underfull \hbox (badness 4454) in paragraph at lines 126--127
 \OT1/ptm/m/n/10 inser[][]ao con-siste em um dos m[]etodos mais sim-ples,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 <images/shell.jpg, id=15, 878.28125pt x 700.6175pt>
 File: images/shell.jpg Graphic file (type jpg)
 <use images/shell.jpg>
-Package pdftex.def Info: images/shell.jpg  used on input line 142.
+Package pdftex.def Info: images/shell.jpg  used on input line 145.
 (pdftex.def)             Requested size: 206.39685pt x 164.64513pt.
 
-Underfull \hbox (badness 2173) in paragraph at lines 146--147
+Underfull \hbox (badness 2173) in paragraph at lines 149--150
 []\OT1/ptm/m/n/10 A Figura 2[] ap-re-senta a ordena[][]ao das parti[][]oes de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
 <images/heapsort.jpg, id=16, 398.48875pt x 293.095pt>
 File: images/heapsort.jpg Graphic file (type jpg)
 <use images/heapsort.jpg>
-Package pdftex.def Info: images/heapsort.jpg  used on input line 174.
+Package pdftex.def Info: images/heapsort.jpg  used on input line 178.
 (pdftex.def)             Requested size: 206.39685pt x 151.8065pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 [2 <./images/shell.jpg> <./images/heapsort.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 <images/merge.png, id=21, 426.59375pt x 620.3175pt>
 File: images/merge.png Graphic file (type png)
 <use images/merge.png>
-Package pdftex.def Info: images/merge.png  used on input line 205.
+Package pdftex.def Info: images/merge.png  used on input line 210.
 (pdftex.def)             Requested size: 206.39685pt x 300.13426pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--218
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
 
  []
 
@@ -736,7 +736,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2
 type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/u
 tmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article.pdf (3 pages, 283756 bytes).
+Output written on article.pdf (3 pages, 285318 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
