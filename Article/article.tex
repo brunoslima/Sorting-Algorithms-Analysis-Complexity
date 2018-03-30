@@ -149,7 +149,7 @@ Complexidade:
 \begin{itemize}
 \item \textbf{Caso médio:} $O (n^{3/2})$
 \end{itemize}
-
+~\\
 \subsection{Algoritmos baseados em Seleção}
 
 
@@ -166,8 +166,7 @@ Complexidade:
 ~\\
 \subsubsection{Heap Sort}
 
-Consiste em um algoritmo de ordenação extremamente sofisticado cuja implementação baseia-se em uma fila de prioridades utilizando a estrutura de dados Heap, o que consiste em uma árvore binária em vetor. Foi inventado por J.W.J. Williams em 1964. O algoritmo consiste em construir um max heap, em seguida trocar o primeiro elemento com o último, e por fim rearranjar o max heap, para todos os elementos exceto para o último, que já é o maior elemento do vetor [2].
-
+O algoritmo Heap Sort, proposto por J.W.J. Williams em 1964, possui uma das implementações mais sofisticadas baseando-se em uma fila de prioridades, através da utilização de um vetor para a representação de uma árvore binária, caracterizando como um dos algoritmos mais estáveis de ordenação, independentemente do modelo de dados de entrada. 
 
 \begin{figure}
   \caption{Equivalência entre a árvore e arranjo.}
@@ -176,18 +175,29 @@ Consiste em um algoritmo de ordenação extremamente sofisticado cuja implementa
     \label{image:arvore}
 \end{figure}
 
-A Figura~\ref{image:arvore} apresenta o processo de equivalência entre a estrutura de dados Heap na forma de árvore e arranjo.\\
+A Figura~\ref{image:arvore} apresenta o processo de equivalência entre a estrutura de dados Heap na forma de árvore e arranjo.
+
+O algoritmo consiste na construção de um \textit{max heap} (cuja principal propriedade consiste em que sempre o elemento raiz é maior que seus filhos, para todas as sub-árvores possíveis), em seguida, aplica-se a troca do primeiro elemento pelo último para todos os elementos do conjunto (equivalente a remover todos os elementos do arranjo), e posteriormente, rearranjar a estrutura para cada elemento, desse modo é obtido um vetor ordenado de modo crescente ao termino do processo.\\
 
 Complexidade:
 \begin{itemize}
-\item \textbf{Caso médio:} $O (n^2)$, de modo invariante.
+\item \textbf{Caso médio:} $O (nlog n)$, de modo invariante.
 \end{itemize}
 
 ~\\
 \subsection{Algoritmos baseados em Intercalação}
 
 \subsubsection{Merge Sort}
+Este algoritmo utiliza o princípio de divisão e conquista, de modo a quebrar um problema complexo em sub-problemas, até o caso base (restante um ou dois elementos no sub-vetor), de modo que seja possível ordená-los. A partir da garantia de que todos os sub-arranjos estão ordenadas, inicia-se o processo de combinação entre eles, de modo recursivo, até alcançar o problema original, de modo ordenado.
 
+As posições situações de ocorrência são as seguintes:
+\begin{itemize}
+\item em seu seu melhor caso nunca é necessário realizar trocas após comparações;
+\item o caso médio ocorre quando nem sempre é necessário realizar trocas após comparações;
+\item por fim, o pior caso ocorre quando sempre é necessário realizar trocas após comparações.
+\end{itemize}~\\
+
+Contudo, de modo invariável, todos os casos tem a mesma complexidade assintótica. Adicionalmente, vale-se destacar que diferentemente dos demais algoritmos que não se utilizam de memória adicional, o algoritmo Merge Sort tem complexidade espacial de tamanho $n$, que em dadas situações, deve ser levada em consideração.
 
 \begin{figure}
   \caption{Abordagem de divisão e conquista do algoritmo.}
@@ -200,15 +210,15 @@ A Figura~\ref{image:merge} apresenta o processo de divisão e conquista utilizad
 
 Complexidade:
 \begin{itemize}
-\item \textbf{Caso médio:} $O (n^2)$, de modo invariante.
+\item \textbf{Caso médio:} $O (nlog n)$, de modo invariante.
 \end{itemize}
 
 ~\\
 %==================================
 \section{Análise Experimental}
-Após a realização da análise assintótica, foi realizada a análise experimental dos mesmos algoritmos, tais testes envolveram diferentes tamanhos de entrada, as dimensões utilizadas para o vetor foram: 10, 100, 1 000, 10 000, 100 000 e 1 000 0000 de elementos, em todos os casos citados acima foram utilizados como teste um vetor crescente, decrescente e elementos dispersos pelo vetor de forma aleatória, ressaltando que para este último foi utilizado um arquivo que armazena os elementos, para que esta sequência aleatória seja sempre a mesma para execução em todos os algoritmos, para todos os testes o tempo é dado em milissegundos (ms).
+De modo a prover uma análise experimental em relação aos algoritmos, foram conduzidos estudos com diferentes tamanhos de entrada, cujas dimensões foram: 10, 100, 1 000, 10 000, 100 000 e 1 000 0000 de elementos, em que para todos os casos foram utilizados como teste um vetor crescente, decrescente e elementos dispersos pelo vetor de forma aleatória (vale ressaltar que para este último foi utilizado um arquivo que armazena os elementos, para que esta sequência aleatória seja sempre a mesma para execução em todos os algoritmos). Todos os casos foram avaliados em relação ao tempo medido em milissegundos (ms).
 
-Para a realização dos testes foi utilizado um computador com as seguintes especificações: processador Intel Core i3 - 3110M CPU @ 2.40 GHz, memória RAM 4 GB, memória caches L1 de 128 KB, L2 de 512 KB e L3 de 3 MB.
+%Para a realização dos testes foi utilizado um computador com as seguintes especificações: processador Intel Core i3 - %3110M CPU @ 2.40 GHz, memória RAM 4 GB, memória caches L1 de 128 KB, L2 de 512 KB e L3 de 3 MB.
 
 
 \subsection{Modelos de entrada de dados}
