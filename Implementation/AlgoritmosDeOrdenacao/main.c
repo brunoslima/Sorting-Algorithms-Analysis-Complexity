@@ -38,7 +38,7 @@ int main(void){
 
     //gerarArquivoElementosAleatorios();
 
-    GerarVetor(vetor, 1);
+    GerarVetor(vetor, 3);
 
     //ImprimeVetor(vetor);
 
@@ -49,7 +49,7 @@ int main(void){
     inicio = li.QuadPart;
 
     //BubbleSort(vetor);
-    //AdvancedBubbleSort(vetor);
+    //BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
     //InsertionSort(vetor);

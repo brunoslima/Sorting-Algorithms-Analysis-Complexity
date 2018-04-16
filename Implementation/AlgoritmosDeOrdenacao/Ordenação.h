@@ -17,7 +17,7 @@ void gerarArquivoElementosAleatorios();
 
 //Algoritmos de ordenação
 void BubbleSort(int* vetor);                                                    //1)Bubble Sort - original
-void AdvancedBubbleSort(int* vetor);                                            //2)Bubble Sort - melhorado
+void BubbleSortAdvanced(int* vetor);                                            //2)Bubble Sort - melhorado
 
 void QuickSortPivoInicio(int *vetor, int esq, int dir);                         //3)Quick Sort - Pivô primeiro elemento
 int ParticionarInicio(int *vetor, int esq, int dir);
