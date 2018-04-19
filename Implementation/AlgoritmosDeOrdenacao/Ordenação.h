@@ -6,7 +6,8 @@
 //#define MAX 1000
 //#define MAX 10000
 //#define MAX 100000
-#define MAX 1000000
+#define MAX 500000
+//#define MAX 1000000
 
 //Funções auxiliares
 void GeraVetor(int* vetor, int opcao);
