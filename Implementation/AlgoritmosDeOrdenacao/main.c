@@ -38,7 +38,7 @@ int main(void){
 
     //gerarArquivoElementosAleatorios();
 
-    GerarVetor(vetor, 3);
+    GerarVetor(vetor, 2);
 
     //ImprimeVetor(vetor);
 

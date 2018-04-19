@@ -9,7 +9,7 @@
 /*------------------------------------------------------------------------------------------------------------*/
 
 
-void GerarVetor(int *vetor, int j){ //Só fiz pra ter certeza que os algoritmos estavam corretos
+void GerarVetor(int *vetor, int j){
 
     int i;
     FILE *f1;
