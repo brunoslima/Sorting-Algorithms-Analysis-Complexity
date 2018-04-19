@@ -40,7 +40,7 @@ int main(void){
 
     GerarVetor(vetor, 2);
 
-    //ImprimeVetor(vetor);
+    ImprimeVetor(vetor);
 
     //Inicio
     QueryPerformanceFrequency(&li);
@@ -53,7 +53,7 @@ int main(void){
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
     //InsertionSort(vetor);
-    //ShellSort3(vetor);
+    ShellSortNOVA(vetor);
     //SelectionSort(vetor);
     //MergeSort(vetor, 0, MAX);
     //HeapSort(vetor);
@@ -63,7 +63,7 @@ int main(void){
 
     //Fim
     double tempo = (double)(fim - inicio)/frequencia;
-    //ImprimeVetor(vetor); //Vetor Ordenado
+    ImprimeVetor(vetor); //Vetor Ordenado
 
     printf("\n\n Tempo (ms): %.18f\n", tempo);
 

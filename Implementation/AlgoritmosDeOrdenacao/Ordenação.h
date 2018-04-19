@@ -1,12 +1,12 @@
 #ifndef ORDENACAO_
 #define ORDENACAO_
 
-//#define MAX 10
+#define MAX 10
 //#define MAX 100
 //#define MAX 1000
 //#define MAX 10000
 //#define MAX 100000
-#define MAX 500000
+//#define MAX 500000
 //#define MAX 1000000
 
 //Funções auxiliares
@@ -32,6 +32,7 @@ void InsertionSort(int* vetor);                                                 
 void ShellSort(int *vetor);                                                     //6)Shell Sort
 void ShellSort2(int *vetor);
 void ShellSort3(int *vetor);
+void ShellSortNOVA(int *vetor);
 
 void SelectionSort(int* vetor);                                                 //7)Selection Sort
 

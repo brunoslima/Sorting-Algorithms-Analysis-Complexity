@@ -200,6 +200,35 @@ void InsertionSort(int* vetor){
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 
+void ShellSortNOVA(int *vetor){ //NOVA IMPLEMENTAÇÃO
+
+    /**
+       Teorema1: Com a sequência de incrementos 1, 3, 7, 15, 31, 63, 127, ..., 2k–1,
+       Shell-sort precisa de O(n.n1/2) passos para ordenar uma seqüência de tamanho n.
+       Complexidade O(n^(3/2))
+
+       http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/shell/shellen.htm
+       https://www.toptal.com/developers/sorting-algorithms/shell-sort
+
+    */
+
+	int i, j , k, x, salto, decrem[6] = {63,31,15,7,3,1};
+    //O vetor de saltos também pode ser passado como parametro.
+
+	for(k = 0; k < 6; k++){
+		salto = decrem[k];
+		for(i = salto; i < MAX; i++){
+			x = vetor[i];
+			for(j = i; (j>=salto && x < vetor[j-salto]); j -= salto){
+				vetor[j] = vetor[j-salto];
+			}
+			vetor[j] = x;
+		}
+	}
+
+	return;
+}
+
 void ShellSort3(int *vetor) {
 
     int i, j, salto, aux;
@@ -266,7 +295,6 @@ void ShellSort(int *vetor){
 
 	return;
 }
-
 
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
