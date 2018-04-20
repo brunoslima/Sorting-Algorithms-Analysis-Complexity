@@ -212,10 +212,10 @@ void ShellSortNOVA(int *vetor){ //NOVA IMPLEMENTAÇÃO
 
     */
 
-	int i, j , k, x, salto, decrem[6] = {63,31,15,7,3,1};
+	int i, j , k, x, salto, decrem[8] = {255, 127, 63,31,15,7,3,1};
     //O vetor de saltos também pode ser passado como parametro.
 
-	for(k = 0; k < 6; k++){
+	for(k = 0; k < 8; k++){
 		salto = decrem[k];
 		for(i = salto; i < MAX; i++){
 			x = vetor[i];
