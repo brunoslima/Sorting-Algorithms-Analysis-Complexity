@@ -200,7 +200,7 @@ void InsertionSort(int* vetor){
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 
-void ShellSortNOVA(int *vetor){ //NOVA IMPLEMENTAÇÃO
+void ShellSort(int *vetor){ //NOVA IMPLEMENTAÇÃO
 
     /**
        Teorema1: Com a sequência de incrementos 1, 3, 7, 15, 31, 63, 127, ..., 2k–1,
@@ -278,7 +278,7 @@ void ShellSort2(int *vetor){
 }
 
 
-void ShellSort(int *vetor){
+void ShellSort1(int *vetor){
 	int i, j , k, x, salto, decrem[5] = {7,5,3,2,1}; //Número primos, melhor escolha? Pensar?
     //O vetor de saltos também pode ser passado como parametro.
 
