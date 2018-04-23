@@ -8,6 +8,10 @@
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 
+void inicializarContadorTroca(){
+
+    contadorTroca = 0;
+}
 
 void GerarVetor(int *vetor, int j){
 
@@ -78,9 +82,14 @@ void BubbleSort(int* vetor){
     int i, j;
     for(i = 1; i < MAX; i++){
         for(j = 0; j < (MAX-i); j++){
-            if (vetor[j+1] < vetor[j]) Swap(vetor+j, vetor+j+1);
-        }
-    }
+
+            if (vetor[j+1] < vetor[j]) {
+
+                Swap(vetor+j, vetor+j+1);
+                contadorTroca++;
+            }//end if
+        }//end for
+    }//end for
 
 }
 
@@ -99,6 +108,7 @@ void BubbleSortAdvanced(int* vetor){
             if ( vetor[j+1] < vetor[j] ){
                 Swap(vetor+j, vetor+j+1);
                 troca = 1;
+                contadorTroca++;
             }
         }
         i++;
@@ -129,7 +139,10 @@ int ParticionarInicio(int *vetor, int esq, int dir){
 
         while(vetor[inicio] <= pivo && inicio < dir) inicio++;
         while(vetor[fim] > pivo && fim > esq) fim--;
-        if(inicio < fim) Swap(vetor+inicio, vetor+fim);
+        if(inicio < fim) {
+            Swap(vetor+inicio, vetor+fim);
+            contadorTroca++;
+        }
     }
     vetor[esq] = vetor[fim];
     vetor[fim] = pivo;
@@ -169,6 +182,7 @@ void ParticionarCentral(int *vetor, int esq, int dir, int *inicio, int *fim){
             Swap(vetor+(*inicio), vetor+(*fim));
             (*inicio)++;
             (*fim)--;
+            contadorTroca++;
         }
 
     }while(*inicio <= *fim);
@@ -190,6 +204,7 @@ void InsertionSort(int* vetor){
 
             vetor[j+1] = vetor[j];
             j--;
+            contadorTroca++;
         }
 
         vetor[j+1] = aux;
@@ -216,78 +231,14 @@ void ShellSort(int *vetor){ //NOVA IMPLEMENTAÇÃO
     //O vetor de saltos também pode ser passado como parametro.
 
 	for(k = 0; k < 8; k++){
+
 		salto = decrem[k];
 		for(i = salto; i < MAX; i++){
+
 			x = vetor[i];
 			for(j = i; (j>=salto && x < vetor[j-salto]); j -= salto){
 				vetor[j] = vetor[j-salto];
-			}
-			vetor[j] = x;
-		}
-	}
-
-	return;
-}
-
-void ShellSort3(int *vetor) {
-
-    int i, j, salto, aux;
-
-    for(salto = 1; salto < MAX; salto = 3*salto+1); //Cálcula salto inicial
-
-    while(salto > 0){
-
-        salto = (salto-1)/3; //Atualiza valor do salto
-        for(i = salto; i < MAX; i++){
-
-            aux = vetor[i];
-            for(j = i; (j >= salto && aux < vetor[j-salto]); j-=salto){
-
-                vetor[j] = vetor[j-salto];
-            }
-            vetor[j] = aux;
-
-        }
-
-    }
-
-    return;
-}
-
-
-void ShellSort2(int *vetor){
-	int i, j ,x, salto;
-
-	for(salto = MAX/2; salto > 0; salto /= 2){
-    //Saltos controlados não por um vetor, mais sim com base no tamanho do vetor a ser ordenado.
-
-		//printf("\n%d\n\n", salto);
-		for(i = salto; i < MAX; i++){
-
-			x = vetor[i];
-			for(j = i; (j >= salto && x < vetor[j-salto]); j-=salto){
-
-				vetor[j] = vetor[j-salto];
-				//printf("\n\n");
-			}
-			vetor[j] = x;
-			//printf("\n\n");
-		}
-	}
-	return;
-}
-
-
-void ShellSort1(int *vetor){
-	int i, j , k, x, salto, decrem[5] = {7,5,3,2,1}; //Número primos, melhor escolha? Pensar?
-    //O vetor de saltos também pode ser passado como parametro.
-
-	for(k = 0; k < 5; k++){
-		salto = decrem[k];
-		for(i = salto; i < MAX; i++){
-			x = vetor[i];
-			for(j = i; (j>=salto && x < vetor[j-salto]); j -= salto){
-				vetor[j] = vetor[j-salto];
+				contadorTroca++;
 			}
 			vetor[j] = x;
 		}
@@ -310,10 +261,14 @@ void SelectionSort(int* vetor){
         for (j = i+1; j < MAX; j++){
 
             if ( vetor[j] < vetor[indice] ) indice = j;
-        }
+        } //end for
 
-        if (indice != i) Swap(vetor+i, vetor+indice);
-    }
+        if (indice != i) {
+            Swap(vetor+i, vetor+indice);
+            contadorTroca++;
+        }//end if
+
+    }//end for
 
 }
 
@@ -333,6 +288,7 @@ void HeapSort(int* vetor){
     for(m = MAX; m >= 1; m--){
 
         Swap(vetor, vetor+m);
+        contadorTroca++;
         MaxHeap(vetor, 0, m-1);
     }
 
@@ -347,6 +303,7 @@ void MaxHeap(int* vetor, int p, int m){
         if(f < m && vetor[f] < vetor[f+1]) f++;
         if(x >= vetor[f]) break;
         vetor[p] = vetor[f];
+        contadorTroca++;
         p = f, f = 2*p+1;
 
     }
@@ -389,7 +346,7 @@ void Merge(int* vetor, int p, int q, int r){
     while(j < r) temp[k++] = vetor[j++];
 
     for(i = p; i < r; i++){
-        vetor[i] =  temp[i-p];
+        vetor[i] = temp[i-p];
     }
 
     free(temp);
