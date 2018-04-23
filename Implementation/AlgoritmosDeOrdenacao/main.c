@@ -40,7 +40,7 @@ int main(void){
 
     //gerarArquivoElementosAleatorios();
 
-    GerarVetor(vetor, 3);
+    GerarVetor(vetor, 2);
 
     //ImprimeVetor(vetor);
 
@@ -50,7 +50,7 @@ int main(void){
     QueryPerformanceCounter(&li);
     inicio = li.QuadPart;
 
-    //BubbleSort(vetor);
+    BubbleSort(vetor);
     //BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
