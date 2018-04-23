@@ -235,35 +235,39 @@ RAM de 8 GB DDR4.
 
 
 
-\begin{filecontents}{pistonkinetics.dat}
-n  ale	        cresc       desc
-10 0.000364672	0.00036467	0.000729345
-100 0.025162379	0.011304841	0.027350422
-1000 2.027211827	1.070313195	2.47904228
-10000 260.8561041	99.28349187	249.613812
-100000 29710.64645	9664.62109818	25154.97916
-500000 746315.8556	245270.4554	597291.3591
-1000000 3014609.044	967866.5598	2347234.462
-
-\end{filecontents}
 
 
-\pgfplotstableread{pistonkinetics.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
-\begin{axis}[minor tick num=1,
-xlabel=n elementos]
-\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
-\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
-\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
-\end{axis}
-\end{tikzpicture}
-\end{document}
+
 
 \subsubsection{Entrada decrescente}
 
 
 \subsubsection{Entrada aleatória}
 
+\centering
+\pgfplotstableread{plots/aleatorio.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+%\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+%\addlegendentry{Bubble Sort}
+%\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+%\addlegendentry{Bubble Sort Avançado}
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
 
 \subsection{Comparativo de abordagem}
 
@@ -275,6 +279,47 @@ xlabel=n elementos]
 
 \subsubsection{Abordagem de troca}
 
+\centering
+\pgfplotstableread{plots/bubble-sort.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+
+\pgfplotstableread{plots/bubble-sort-adv.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\pgfplotstableread{plots/quick-sort-pivo-inicial.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\pgfplotstableread{plots/quick-sort-pivo-central.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
 
 \section{Considerações Finais}
 
