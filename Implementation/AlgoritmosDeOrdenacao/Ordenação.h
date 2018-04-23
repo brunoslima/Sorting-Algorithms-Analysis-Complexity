@@ -1,13 +1,15 @@
 #ifndef ORDENACAO_
 #define ORDENACAO_
 
-//#define MAX 10
+#define MAX 10
 //#define MAX 100
 //#define MAX 1000
 //#define MAX 10000
 //#define MAX 100000
 //#define MAX 500000
-#define MAX 1000000
+//#define MAX 1000000
+
+int contadorTroca;
 
 //Funções auxiliares
 void GeraVetor(int* vetor, int opcao);
@@ -15,6 +17,7 @@ void GerarVetor(int *vetor, int j);
 void ImprimeVetor(int* a);
 void Swap(int* a, int* b);
 void gerarArquivoElementosAleatorios();
+void inicializarContadorTroca();
 
 //Algoritmos de ordenação
 void BubbleSort(int* vetor);                                                    //1)Bubble Sort - original

@@ -36,6 +36,8 @@ int main(void){
 
     int vetor[MAX];
 
+    inicializarContadorTroca();
+
     //gerarArquivoElementosAleatorios();
 
     GerarVetor(vetor, 3);
@@ -66,7 +68,7 @@ int main(void){
     //ImprimeVetor(vetor); //Vetor Ordenado
 
     printf("\n\n Tempo (ms): %.18f\n", tempo);
-
+    printf("\n\n Trocas: %d", contadorTroca);
     //system("PAUSE");
     return(0);
 }
