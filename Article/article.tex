@@ -234,12 +234,60 @@ RAM de 8 GB DDR4.
 \subsubsection{Entrada crescente}
 
 
+\centering
+\pgfplotstableread{plots/crescente.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
 
 
 
 
 
 \subsubsection{Entrada decrescente}
+\centering
+\pgfplotstableread{plots/decrescente.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
 
 
 \subsubsection{Entrada aleatória}
@@ -248,10 +296,10 @@ RAM de 8 GB DDR4.
 \pgfplotstableread{plots/aleatorio.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
-%\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
-%\addlegendentry{Bubble Sort}
-%\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
-%\addlegendentry{Bubble Sort Avançado}
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
 \addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
 \addlegendentry{Quick Sort Inicial}
 \addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
