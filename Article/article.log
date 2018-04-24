@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.16)  23 APR 2018 17:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.16)  24 APR 2018 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1001,17 +1001,17 @@ File: images/bubble.png Graphic file (type png)
 Package pdftex.def Info: images/bubble.png used on input line 91.
 (pdftex.def)             Requested size: 206.39685pt x 154.80092pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
@@ -1019,115 +1019,132 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
 
  <./images/bubble.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
  \OT1/ptm/m/it/10 1) In-ser-tion Sort: [][] \OT1/ptm/m/n/10 A es-trat[]egia de 
 ordena[][]ao por
  []
 
 
-Underfull \hbox (badness 4454) in paragraph at lines 126--127
+Underfull \hbox (badness 4454) in paragraph at lines 127--128
 \OT1/ptm/m/n/10 inser[][]ao con-siste em um dos m[]etodos mais sim-ples,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-<images/shell.jpg, id=19, 878.28125pt x 700.6175pt>
+<images/shell.jpg, id=18, 878.28125pt x 700.6175pt>
 File: images/shell.jpg Graphic file (type jpg)
  <use images/shell.jpg>
-Package pdftex.def Info: images/shell.jpg used on input line 145.
+Package pdftex.def Info: images/shell.jpg used on input line 146.
 (pdftex.def)             Requested size: 206.39685pt x 164.64513pt.
 
-Underfull \hbox (badness 2173) in paragraph at lines 149--150
-[]\OT1/ptm/m/n/10 A Figura 2[] ap-re-senta a ordena[][]ao das parti[][]oes de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-<images/heapsort.jpg, id=20, 398.48875pt x 293.095pt>
+<images/heapsort.jpg, id=19, 398.48875pt x 293.095pt>
 File: images/heapsort.jpg Graphic file (type jpg)
 
 <use images/heapsort.jpg>
-Package pdftex.def Info: images/heapsort.jpg used on input line 178.
+Package pdftex.def Info: images/heapsort.jpg used on input line 180.
 (pdftex.def)             Requested size: 206.39685pt x 151.8065pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 [2 <./images/shell.jpg> <./images/heapsort.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
-<images/merge.png, id=25, 426.59375pt x 620.3175pt>
+<images/merge.png, id=24, 426.59375pt x 620.3175pt>
 File: images/merge.png Graphic file (type png)
  <use images/merge.png>
-Package pdftex.def Info: images/merge.png used on input line 210.
+Package pdftex.def Info: images/merge.png used on input line 213.
 (pdftex.def)             Requested size: 206.39685pt x 300.13426pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--223
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
+[]\OT1/ptm/m/n/10 As an[]alises ex-per-i-men-tais a seguir re-al-izam uma
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 235--237
+\OT1/ptm/m/n/10 compara[][]ao en-tre to-dos os m[]etodos de ordena[][]ao para
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
 
  []
 
 PGFPlots: reading {plots/crescente.dat}
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
- [3 <./images/merge.png>]
+ []
+
+[3 <./images/merge.png>]
 PGFPlots: reading {plots/decrescente.dat}
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
 PGFPlots: reading {plots/aleatorio.dat}
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+[4]
+PGFPlots: reading {plots/insertion-sort.dat}
+PGFPlots: reading {plots/shell-sort.dat}
+PGFPlots: reading {plots/selection-sort.dat}
+PGFPlots: reading {plots/heap-sort.dat}
 PGFPlots: reading {plots/bubble-sort.dat}
+ [5]
 PGFPlots: reading {plots/bubble-sort-adv.dat}
 PGFPlots: reading {plots/quick-sort-pivo-inicial.dat}
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
 PGFPlots: reading {plots/quick-sort-pivo-central.dat}
+PGFPlots: reading {plots/merge-sort.dat}
 
 
 ** Conference Paper **
@@ -1140,29 +1157,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] (./article.aux) ) 
+[6] [7
+
+] (./article.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 23039 strings out of 494888
- 589442 string characters out of 6179127
- 780290 words of memory out of 5000000
- 25944 multiletter control sequences out of 15000+600000
- 35704 words of font info for 66 fonts, out of 8000000 for 9000
+ 23134 strings out of 494888
+ 591219 string characters out of 6179127
+ 782290 words of memory out of 5000000
+ 26032 multiletter control sequences out of 15000+600000
+ 32365 words of font info for 63 fonts, out of 8000000 for 9000
  41 hyphenation exceptions out of 8191
- 62i,17n,100p,751b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
-mbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article.pdf (5 pages, 287823 bytes).
+ 62i,20n,100p,751b,2143s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on article.pdf (7 pages, 292084 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
