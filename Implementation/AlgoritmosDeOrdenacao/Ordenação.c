@@ -146,6 +146,7 @@ int ParticionarInicio(int *vetor, int esq, int dir){
     }
     vetor[esq] = vetor[fim];
     vetor[fim] = pivo;
+    contadorTroca++;
     return(fim);
 }
 
@@ -347,6 +348,7 @@ void Merge(int* vetor, int p, int q, int r){
 
     for(i = p; i < r; i++){
         vetor[i] = temp[i-p];
+        contadorTroca++;
     }
 
     free(temp);

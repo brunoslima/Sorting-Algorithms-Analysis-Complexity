@@ -40,7 +40,7 @@ int main(void){
 
     //gerarArquivoElementosAleatorios();
 
-    GerarVetor(vetor, 2);
+    GerarVetor(vetor, 3);
 
     //ImprimeVetor(vetor);
 
@@ -50,7 +50,7 @@ int main(void){
     QueryPerformanceCounter(&li);
     inicio = li.QuadPart;
 
-    BubbleSort(vetor);
+    //BubbleSort(vetor);
     //BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
@@ -68,7 +68,8 @@ int main(void){
     //ImprimeVetor(vetor); //Vetor Ordenado
 
     printf("\n\n Tempo (ms): %.18f\n", tempo);
-    printf("\n\n Trocas: %d", contadorTroca);
+    printf("\n\n Trocas1: %d", contadorTroca);
+
     //system("PAUSE");
     return(0);
 }
