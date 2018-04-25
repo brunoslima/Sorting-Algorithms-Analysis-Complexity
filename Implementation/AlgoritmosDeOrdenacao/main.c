@@ -51,10 +51,10 @@ int main(void){
     inicio = li.QuadPart;
 
     //BubbleSort(vetor);
-    //BubbleSortAdvanced(vetor);
+    BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
-    InsertionSort(vetor);
+    //InsertionSort(vetor);
     //ShellSort(vetor);
     //SelectionSort(vetor);
     //MergeSort(vetor, 0, MAX);
