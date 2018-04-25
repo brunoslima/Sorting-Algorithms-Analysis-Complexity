@@ -244,7 +244,7 @@ RAM de 8 GB DDR4.
 
 \subsubsection{Entrada aleatória}
 
-\centering
+
 \pgfplotstableread{plots/aleatorio.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
@@ -279,7 +279,6 @@ RAM de 8 GB DDR4.
 
 \subsubsection{Abordagem de troca}
 
-\centering
 \pgfplotstableread{plots/bubble-sort.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
@@ -323,7 +322,9 @@ xlabel=n elementos]
 
 \section{Análise quantidade de trocas realizadas}
 
-\centering
+Além da análise experimental que visa comparar os tempos de execução entre os diversos algoritmos de ordenação, também foi aplicada uma análise com objetivo de comparar a quantidade de trocas de posições de elementos durante uma ordenação. Foi medido durante a execução dos algoritmos a quantidade máxima de troca que eles realizam de acordo com os três tipos de entrada (aleatória, crescente e decrescente) em diferentes dimensões.
+
+\begin{center}
 \pgfplotstableread{plots/swap/aleatorio-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
@@ -347,8 +348,9 @@ xlabel=n elementos]
 \addlegendentry{Heap Sort}
 \end{axis}
 \end{tikzpicture}
+\end{center}
 
-\centering
+\begin{center}
 \pgfplotstableread{plots/swap/crescente-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
@@ -372,8 +374,9 @@ xlabel=n elementos]
 \addlegendentry{Heap Sort}
 \end{axis}
 \end{tikzpicture}
+\end{center}
 
-\centering
+\begin{center}
 \pgfplotstableread{plots/swap/decrescente-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
@@ -397,115 +400,181 @@ xlabel=n elementos]
 \addlegendentry{Heap Sort}
 \end{axis}
 \end{tikzpicture}
+\end{center}
 
 \subsection{Análise número de trocas por algoritmo}
 
+Após observar o comportamento do número de trocas com uma visão de todos os algoritmos juntos, agora é exposto esse comportamento considerando cada algoritmo individualmente, afim de perceber as diferenças existentes nos três tipos distintos de entradas (aleatório, crescente e decrescente).
+
 \subsubsection{Bubble Sort Clássico}
 
+\begin{center}
 \pgfplotstableread{plots/swap/bubble-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
 \end{tikzpicture}
+\end{center}
 
 \subsubsection{Bubble Sort Melhorado}
 
+\begin{center}
 \pgfplotstableread{plots/swap/bubble-sort-adv-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
 \end{tikzpicture}
+\end{center}
 
-\subsubsection{Quick Sort Pivo inicial}
+\subsubsection{Quick Sort Pivô inicial}
 
+O algoritmo Quick Sort com implementação colocando sempre o pivô como ponto inicial tem números de trocas que apresentam comportamento linear. O maior número de trocas ocorre quando a entrada está organizada em ordem aleatória, entretanto os casos em que a entrada está em ordem crescente ou decrescente a quantidade de trocas é a mesma para essas duas entradas, vale ressaltar ainda que a quantidade de trocas na entrada em ordem aleatória é bem maior que a quantidade de trocas nas duas outras configurações de entrada. Observe o Gráfico \ref{graf:quick-inicial-troca}
+
+\begin{center}
 \pgfplotstableread{plots/swap/quick-sort-pivo-inicial-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
+\label{graf:quick-inicial-troca}
 \end{tikzpicture}
+\end{center}
 
-\subsubsection{Quick Sort Pivo Central}
+\subsubsection{Quick Sort Pivô Central}
 
+Quando o algoritmo Quick Sort é implementado com o pivo sendo sempre o elemento central o comportamento de número de trocas é diferente a implementação com pivô sendo sempre o inicial. Neste caso, o maior número de trocas absoluto continua sendo para a entrada organizada de modo aleatório, contudo a diferença entra a implementação discutida anteriormente está que o número de trocas para entradas em ordem crescente e decrescente é diferente, tendo maior quantidade de trocas para a decrescente e menor para a entrada em ordem crescente. Observe o Gráfico \ref{graf:quick-central-troca}.
+
+\begin{center}
 \pgfplotstableread{plots/swap/quick-sort-pivo-central-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
+\label{graf:quick-central-troca}
 \end{tikzpicture}
+\end{center}
 
 \subsubsection{Insertion Sort}
 
+\begin{center}
 \pgfplotstableread{plots/swap/insertion-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
 \end{tikzpicture}
+\end{center}
 
 \subsubsection{Shell Sort}
 
+O Shell Sort não realiza nenhuma troca quando a entrada de dados está em ordem decrescente, a verificação presente no corpo do algoritmo garante isso. Contudo, para os outros demais casos existem uma quantidade de trocas significativa de comportamento não linear, porem quanto maior a dimensão da entra maior o número de trocas. A maior quantidade de trocas ocorre com a entrada em ordem decrescente e a segunda maior em ordem aleatória. Observe o Gráfico \ref{graf:shell-troca}.
+
+\begin{center}
 \pgfplotstableread{plots/swap/shell-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
+\label{graf:shell-troca}
 \end{tikzpicture}
+\end{center}
 
 \subsubsection{Selection Sort}
 
+No algoritmo Selection Sort todas as quantidades de trocas tem valores bem espaçados entre as três configurações de entrada. Neste caso, a que menos realiza trocas são quando a entrada está em ordem crescente, neste caso, nenhuma troca é realizada, pois, o algoritmo verifica que os elementos já estão em ordem correta. Já nas duas demais configurações de entrada ocorrem um número de trocas acentuado, sendo o maior deles na entrada em ordem aleatória e a segundo maior na entrada em ordem decrescente. Observe o Gráfico \ref{graf:selection-troca}.
+
+\begin{center}
 \pgfplotstableread{plots/swap/selection-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
+\label{graf:selection-troca}
 \end{tikzpicture}
+\end{center}
 
 \subsubsection{Merge Sort}
 
+O algoritmo Merge Sort independentemente da configuração de entrada sempre irá realizar o mesmo número de trocas em seu processo de ordenação. Assim, independente se a entrada contem elementos organizados em ordem aleatória, crescente ou decrescente, o número de troca será o mesmo. Vale ressaltar ainda que conforme a quantidade de elementos aumenta, maior será o número de trocas formando um comportamento linear. Observe o Gráfico \ref{graf:merge-troca}.
+
+\begin{center}
 \pgfplotstableread{plots/swap/merge-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
+\label{graf:merge-troca}
 \end{tikzpicture}
+\end{center}
 
 \subsubsection{Heap Sort}
+
+No caso do algoritmo Heap Sort, é constatado também que conforme o número de elementos a serem ordenados aumentam maior será o número de trocas em todas as configurações de entrada, formando um comportamento bem próximo ao linear. 
+
+Contudo, existe uma mínima diferença entre a quantidade de trocas em cada configuração de entrada. A menor quantidade de trocas acontece quando a entrada de dados são elementos em ordem decrescente, já a maior quantidade de trocas ocorre quando os elementos está dispostos em ordem aleatória, caso os elementos estejam em ordem aleatória a quantidade de trocas é menor que a crescente e maior que a de ordem decrescente. Observe o Gráfico \ref{graf:heap-troca}.
 
 \pgfplotstableread{plots/swap/heap-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
+\addlegendentry{Aleatório}
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addlegendentry{Crescente}
 \addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
+\label{graf:heap-troca}
 \end{tikzpicture}
 
 \section{Considerações Finais}
