@@ -5,11 +5,11 @@
 //#define MAX 100
 //#define MAX 1000
 //#define MAX 10000
-#define MAX 100000
+//#define MAX 100000
 //#define MAX 500000
-//#define MAX 1000000
+#define MAX 1000000
 
-int contadorTroca;
+unsigned long int contadorTroca;
 
 //Funções auxiliares
 void GeraVetor(int* vetor, int opcao);

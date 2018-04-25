@@ -54,7 +54,7 @@ int main(void){
     //BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
-    //InsertionSort(vetor);
+    InsertionSort(vetor);
     //ShellSort(vetor);
     //SelectionSort(vetor);
     //MergeSort(vetor, 0, MAX);
@@ -68,7 +68,7 @@ int main(void){
     //ImprimeVetor(vetor); //Vetor Ordenado
 
     printf("\n\n Tempo (ms): %.18f\n", tempo);
-    printf("\n\n Trocas1: %d", contadorTroca);
+    printf("\n\n Trocas: %lu", contadorTroca);
 
     //system("PAUSE");
     return(0);
