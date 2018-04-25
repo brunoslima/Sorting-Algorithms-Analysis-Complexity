@@ -353,7 +353,7 @@ Por fim, os algoritmos de pior rendimento consistem nas duas implementações do
 
 
 \subsection{Comparativo por algoritmo}
-
+~\\
 \subsubsection{Insertion Sort}
 
 Por meio da Figura~\ref{image: graph-insertion}, permite observar que o algoritmo Insertion Sort consiste em um excelente opção para arranjos quase ordenados, pois caracteriza-se com complexidade quase linear, podendo ser muito útil em cenários que haja a construção do conjunto ordenado por demanda, indicado pela curva do arranjo crescente, contudo para os demais casos este torna-se próximo da complexidade quadrática, não consistindo na melhor escolha para tais situações.
@@ -375,7 +375,7 @@ Por meio da Figura~\ref{image: graph-insertion}, permite observar que o algoritm
 \caption{Análise experimental do algoritmo Insertion Sort.}
 \label{image: graph-insertion}
 \end{figure}
-
+~\\
 \subsubsection{Shell Sort}
 O gráfico representado pela Figura~\ref{image: graph-shell} demostra análise para diferentes casos de entrada do algoritmo Shell Sort, o qual apresenta um comportamento semelhante ao anterior, porém é capaz de lidar com tamanhos de conjunto de dados em um tempo muito mais inferior, enquanto o primeiro trabalha na grandeza de milhões de unidades de tempo, no caso milissegundos, o segundo trabalha na proporção dos milhares. 
 
@@ -399,12 +399,11 @@ Como a sua implementação consiste em uma melhoria da abordagem de inserção, 
 \caption{Análise experimental do algoritmo Shell Sort.}
 \label{image: graph-shell}
 \end{figure}
-
+~\\
 \subsubsection{Selection Sort}
 
 Através do gráfico representado pela Figura~\ref{image: graph-selection}, pode-se concluir que o algoritmo de ordenação Selection Sort, apesar de ser indiferente quanto a organização prévia dos elementos pertencentes ao arranjo e ter uma das mais simples implementações, caracterizando-se como força-bruta, torna-se pior a medida que o número de elementos cresce, cuja curva se assemelha às quadráticas.
 
-O principal e único destaque do algoritmo está relacionado ao número de trocas realizadas representado pelo gráfico na Figura !!!!!!!!!!!!!GRÁFICO DE TROCAS!!!!!!!!!!!!!!!
 \begin{figure}
 
 
@@ -426,13 +425,14 @@ O principal e único destaque do algoritmo está relacionado ao número de troca
 
 
 
-
+~\\
 \subsubsection{Heap Sort}
 
-Por fim, o gráfico acima demonstra que o algoritmo Heap Sort mediante a uma implementação sofisticada promove resultados invariantes para todos os casos, sem o uso adicional de recursos.
+Para a análise do algoritmo de ordenação \textit{Heap Sort} é possível observar, através do gráfico representado pela Figura~\ref{image: graph-heap} que os melhores casos são para entradas crescentes e decrescentes, enquanto que para o caso aleatório é registrado uma complexidade de tempo. 
+
+Como grande destaque, de modo invariante para entrada de dados, este consiste o único algoritmo que realizou todos os testes experimentais dentro da grandeza de centenas de millissegundos, não alcançando os 300 ms para as maiores entradas de dados.
 
 \begin{figure}
-\label{image: graph-heap}
 
 \centering
 \pgfplotstableread{plots/heap-sort.dat}{\pistonkinetics}
@@ -447,14 +447,16 @@ Por fim, o gráfico acima demonstra que o algoritmo Heap Sort mediante a uma imp
 \end{axis}
 \end{tikzpicture}
 \caption{Análise experimental do algoritmo Heap Sort.}
+\label{image: graph-heap}
 \end{figure}
 
+~\\
 \subsubsection{Bubble Sort}
 
-A análise experimental realizada com o método Bubble Sort em sua versão clássica revelou que independente do caso em que os elementos estão distribuídos no vetor, seja de modo aleatório, crescente ou decrescente o comportamento expresso no gráfico acima é semelhante, considerado de ordem quadrática, tendo para a organização inicial um vetor crescente seu desempenho foi levemente superior aos demais devido ao número reduzido de trocas entre elementos.
+O estudo experimental, apresentado na Figura~\ref{image: graph-bubble} realizado com o método de ordenação \textit{Bubble Sort} original, demonstra que independentemente da entrada de dados, o comportamento é semelhante, considerado de ordem quadrática, em que, de modo adicional, para um vetor crescente seu desempenho foi levemente superior aos demais devido ao número reduzido de trocas entre elementos.
 
 \begin{figure}
-\label{image: graph-bubble}
+
 
 \centering
 \pgfplotstableread{plots/bubble-sort.dat}{\pistonkinetics}
@@ -469,12 +471,12 @@ A análise experimental realizada com o método Bubble Sort em sua versão clás
 \end{axis}
 \end{tikzpicture}
 \caption{Análise experimental do algoritmo Bubble Sort.}
+\label{image: graph-bubble}
 \end{figure}
 
-Os resultados da análise experimental revelaram que para o método de ordenação Bubble Sort com melhorias apresenta como seu melhor caso quando o vetor já está organizado de modo crescente tendo um desempenho linear, além disso tanto para conjuntos organizados de modo decrescente quanto para conjuntos organizados de forma aleatória temos um comportamento que se enquadra em seu pior caso com desempenho considerado quadrático, que é visivelmente observado em conjuntos de tamanho maior que cem mil.
+Em contraponto, a implementação com  com melhorias do algoritmo \textit{Bubble Sort}, representado pela Figura~\ref{image: graph-bubble-adv}, apresenta como melhor caso o arranjo crescente, registrando um desempenho linear. Para os demais casos de entrada, o comportamento quadrático novamente é registrado, e torna-se mais evidente de modo proporcional ao crescimento do conjunto de entrada.
 
 \begin{figure}
-\label{image: graph-bubble-adv}
 
 \pgfplotstableread{plots/bubble-sort-adv.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -488,14 +490,15 @@ Os resultados da análise experimental revelaram que para o método de ordenaç�
 \end{axis}
 \end{tikzpicture}
 \caption{Análise experimental do algoritmo Bubble Sort Avançado.}
+\label{image: graph-bubble-adv}
 \end{figure}
 
-
+~\\
 \subsubsection{Quick Sort}
-O experimento demonstrou que o algoritmo Quick Sort com pivô inicial tem um bom desempenho para um conjunto organizado em ordem aleatória, contudo para conjuntos em ordem crescente e decrescente o teste resultou em um baixo desempenho aumentando de forma considerável o tempo de execução.
+A análise experimental realizada para o algoritmo \textit{Quick Sort} com pivô inicial, representada pela Figura~\ref{image: graph-quick-inicial} apresentou bom desempenho para um conjunto aleatório, contudo para ordem crescente e decrescente, o processo de teste determinou desempenho inferior de forma considerável.
 
 \begin{figure}
-\label{image: graph-quick-inicial}
+
 
 \pgfplotstableread{plots/quick-sort-pivo-inicial.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -509,10 +512,13 @@ O experimento demonstrou que o algoritmo Quick Sort com pivô inicial tem um bom
 \end{axis}
 \end{tikzpicture}
 \caption{Análise experimental do algoritmo Quick Sort com pivô inicial.}
+\label{image: graph-quick-inicial}
 \end{figure}
 
 
-Considerando a implementação do algoritmo Quick Sort utilizando um o pivô central é notório que nos casos em que o vetor está inicialmente ordenado de modo crescente e de modo decrescente o desempenho são semelhantes e melhores se comparados com um vetor com elementos dispostos aleatoriamente. 
+Por outro lado, considerando a implementação do algoritmo \textit{Quick Sort} utilizando pivô central, é notório que nos casos em que o vetor está inicialmente ordenado de modo crescente e decrescente o desempenho é superior em detrimento ao arranjo  disposto aleatoriamente. 
+
+Vale-se destacar a disparidade na grandeza de tempo entre a abordagem de pivô e central. Em ambos os casos, para a maior entrada de dados, a primeira opção requereu tempo superior a 1 000 000 ms, enquanto o segundo requereu um pouco mais que 150 ms.
 
 \begin{figure}
 \label{image: graph-quick-central}
@@ -532,13 +538,12 @@ Considerando a implementação do algoritmo Quick Sort utilizando um o pivô cen
 \caption{Análise experimental do algoritmo Quick Sort com pivô central.}
 \end{figure}
 
-
+~\\
 \subsubsection{Merge Sort}
 
-Em suma, a sua implementação baseada em divisão e conquista, permite um remanejamento dos elementos quase indiferente para os casos de conjunto crescente, decrescente e aleatório, colocando como um dos melhores algoritmos, apesar de seu maior consumo de memória.
+Por fim, para o algoritmo \textit{Merge Sort} que possui implementação baseada em divisão e conquista, a análise representada pela Figura~\ref{image: graph-merge}, permite o processo de ordenação de modo quase indiferente em relação ao modelo de entrada de dados. De modo específico, é possível observar uma pequena vantagem para conjunto decrescentes e crescentes em detrimento ao aleatório.
 
 \begin{figure}
-\label{image: graph-merge}
 
 \centering
 \pgfplotstableread{plots/merge-sort.dat}{\pistonkinetics}
@@ -553,19 +558,78 @@ Em suma, a sua implementação baseada em divisão e conquista, permite um reman
 \end{axis}
 \end{tikzpicture}
 \caption{Análise experimental do algoritmo Merge Sort.}
+\label{image: graph-merge}
 \end{figure}
 
+~\\
 \subsection{Comparativo de abordagem}
 
+Todas as comparações abaixo foram realizadas utilizando os casos para conjunto de dados aleatório e também com as melhores implementações de cada algoritmo, de forma a não favorecer determinados algoritmos e consequentemente propor conclusões equivocadas.
+~\\
 \subsubsection{Abordagem de inserção}
+
+A comparação entre os algoritmos com abordagem de ordenação baseada em inserção, representado pela Figura~\ref{image: graph-insercao} indica uma enorme superioridade para o algoritmo \textit{Shell Sort} em detrimento ao \textit{Insertion Sort}, a qual se eleva ainda mais após entradas de tamanho 500 000, demonstrando que uso de saltos para ordenação em sub-partições é essencial, proporcionando grande ganho de desempenho.
+
+\begin{figure}
+\centering
+\pgfplotstableread{plots/insercao.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.45,1)}}]
+\addplot [black,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [red,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\end{axis}
+\end{tikzpicture}
+\caption{Comparativo de algoritmos baseados em inserção.}
+\label{image: graph-insercao}
+\end{figure}
+~\\
 \subsubsection{Abordagem de troca}
+
+Para o comparativo dos algoritmos de ordenação baseados em troca, através da Figura~\ref{image: graph-troca}, pode-se observar que o algoritmo \textit{Quick Sort} com pivô central tem custo de processamento extremamente inferior em relação ao \textit{Bubble Sort} com melhorias. Desse modo, vale ressaltar que a ordenação através de sub-partições e a escolha adequada de um pivô proporcionam um resultado muito superior do que a comparação direta entre vizinhos usada no \textit{Bubble Sort}.
+\begin{figure}
+
+\centering
+\pgfplotstableread{plots/troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.4,1)}}]
+\addplot [black,very thick] table [x={n}, y={bubble}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={quick}] {\pistonkinetics};
+\addlegendentry{Quick Sort}
+\end{axis}
+\end{tikzpicture}
+\caption{Comparativo de algoritmos baseados em troca.}
+\label{image: graph-troca}
+\end{figure}
+
+~\\
 \subsubsection{Abordagem de seleção}
+Por fim, o comparativo da abordagem de ordenação baseada em seleção, representada pela Figura~\ref{image: graph-selecao}, indique um desempenho extremamente superior do algoritmo \textit{Heap Sort}, que utiliza a ideia de fila de prioridades, em detrimento ao algoritmo \textit{Selection Sort}, que utiliza uma ideia intuitiva, porém caracterizada como força-bruta, sem qualquer inteligência do método ou aproveitamento de propriedades do conjunto de dados.
 
+\begin{figure}
 
+\centering
+\pgfplotstableread{plots/selecao.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.45,1)}}]
+\addplot [black,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [red,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
+\caption{Comparativo de algoritmos baseados em seleção.}
+\label{image: graph-selecao}
+\end{figure}
 
+~\\
 \section{Considerações Finais}
 
+Em suma, este estudo experimental buscou analisar e comparar o desempenho de diferentes abordagens e algoritmos de ordenação com o intuito de identificar características e melhores situações para utilização de cada método.
 
+Os algoritmos \textit{Quick Sort} com pivô central, \textit{Shell Sort} e \textit{Heap Sort} apresentaram os melhores desempenhos dentro de suas respectivas abordagens de ordenação. Apesar de serem boas opções, vale ressaltar uma análise quanto ao contexto e necessidades da aplicação que tais algoritmos serão empregados, desse modo, desde implementações mais simples como o \textit{Insertion Sort} podem ser empregadas, principalmente em cenários que o conjunto de dados cresce por demanda, que nesse caso, é melhor opção devido a simplicidade e desempenho. Adicionalmente, vale lembrar o algoritmo \textit{Merge Sort} devido a estabilidade quanto a entrada de dados, porém, como ponto negativo, o consumo adicional de memória.
 
 %\begin{thebibliography}{1}
 
