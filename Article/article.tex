@@ -321,6 +321,193 @@ xlabel=n elementos]
 \end{axis}
 \end{tikzpicture}
 
+\section{Análise quantidade de trocas realizadas}
+
+\centering
+\pgfplotstableread{plots/swap/aleatorio-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
+
+\centering
+\pgfplotstableread{plots/swap/crescente-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
+
+\centering
+\pgfplotstableread{plots/swap/decrescente-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
+
+\subsection{Análise número de trocas por algoritmo}
+
+\subsubsection{Bubble Sort Clássico}
+
+\pgfplotstableread{plots/swap/bubble-sort-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Bubble Sort Melhorado}
+
+\pgfplotstableread{plots/swap/bubble-sort-adv-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Quick Sort Pivo inicial}
+
+\pgfplotstableread{plots/swap/quick-sort-pivo-inicial-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Quick Sort Pivo Central}
+
+\pgfplotstableread{plots/swap/quick-sort-pivo-central-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Insertion Sort}
+
+\pgfplotstableread{plots/swap/insertion-sort-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Shell Sort}
+
+\pgfplotstableread{plots/swap/shell-sort-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Selection Sort}
+
+\pgfplotstableread{plots/swap/selection-sort-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Merge Sort}
+
+\pgfplotstableread{plots/swap/merge-sort-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
+\subsubsection{Heap Sort}
+
+\pgfplotstableread{plots/swap/heap-sort-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[minor tick num=1,
+xlabel=n elementos]
+\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
+\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
+\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
+\end{axis}
+\end{tikzpicture}
+
 \section{Considerações Finais}
 
 
