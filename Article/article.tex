@@ -199,7 +199,7 @@ Complexidade:
 
 \subsubsection{Merge Sort}
 
-Este algoritmo utiliza o princípio de divisão e conquista, de modo a quebrar um problema complexo em sub-problemas, até o caso base (restante um ou dois elementos no sub-vetor), de modo que seja possível ordená-los. A partir da garantia de que todos os sub-arranjos estão ordenadas, inicia-se o processo de combinação entre eles, de modo recursivo, até alcançar o problema original, de modo ordenado.
+Este algoritmo utiliza o princípio de divisão e conquista, de modo a quebrar um problema complexo em sub-problemas, até o caso base (restante um ou dois elementos no sub-vetor), de modo que seja possível ordená-los. A partir da garantia de que todos os sub-arranjos estão ordenadas, inicia-se o processo de combinação entre eles, de modo recursivo, até alcançar o problema original, de modo ordenado \cite{sedgewick}.
 
 As posições situações de ocorrência são as seguintes:
 \begin{itemize}
@@ -208,7 +208,7 @@ As posições situações de ocorrência são as seguintes:
 \item por fim, o pior caso ocorre quando sempre é necessário realizar trocas após comparações.
 \end{itemize}~\\
 
-Contudo, de modo invariável, todos os casos tem a mesma complexidade assintótica. Adicionalmente, vale-se destacar que diferentemente dos demais algoritmos que não se utilizam de memória adicional, o algoritmo Merge Sort tem complexidade espacial de tamanho $n$, que em dadas situações, deve ser levada em consideração.
+Contudo, de modo invariável, todos os casos tem a mesma complexidade assintótica. Adicionalmente, vale-se destacar que diferentemente dos demais algoritmos que não se utilizam de memória adicional, o algoritmo Merge Sort tem complexidade espacial de tamanho $n$, que em dadas situações, deve ser levada em consideração \cite{sedgewick}.
 
 \begin{figure}[H]
   
@@ -353,9 +353,9 @@ No último modelo de entrada de dados, representado pela Figura~\ref{image: alea
 
 Por fim, os algoritmos de pior rendimento consistem nas duas implementações do \textit{Bubble Sort}, em que deve-se destacar o elevadíssimo número de comparações como principal fator para o rendimento apresentado.
 
-
-\subsection{Comparativo por algoritmo}
 ~\\
+\subsection{Comparativo por algoritmo}
+
 \subsubsection{Insertion Sort}
 
 Por meio da Figura~\ref{image: graph-insertion}, permite observar que o algoritmo Insertion Sort consiste em um excelente opção para arranjos quase ordenados, pois caracteriza-se com complexidade quase linear, podendo ser muito útil em cenários que haja a construção do conjunto ordenado por demanda, indicado pela curva do arranjo crescente, contudo para os demais casos este torna-se próximo da complexidade quadrática, não consistindo na melhor escolha para tais situações.
@@ -1017,6 +1017,7 @@ Em suma, este estudo experimental buscou analisar e comparar o desempenho de dif
 
 Os algoritmos \textit{Quick Sort} com pivô central, \textit{Shell Sort} e \textit{Heap Sort} apresentaram os melhores desempenhos dentro de suas respectivas abordagens de ordenação. Apesar de serem boas opções, vale ressaltar uma análise quanto ao contexto e necessidades da aplicação que tais algoritmos serão empregados, desse modo, desde implementações mais simples como o \textit{Insertion Sort} podem ser empregadas, principalmente em cenários que o conjunto de dados cresce por demanda, que nesse caso, é melhor opção devido a simplicidade e desempenho. Adicionalmente, vale lembrar o algoritmo \textit{Merge Sort} devido a estabilidade quanto a entrada de dados, porém, como ponto negativo, o consumo adicional de memória.
 
+~\\
 \begin{thebibliography}{9}
 
 \bibitem{ziviani} 
@@ -1025,6 +1026,9 @@ ZIVIANI, Nivio. Projeto de Algoritmos: Com implementações em Pascal e C. São 
 \bibitem{biggar}
 BIGGAR, Paul. GREGG, David. Sorting in the Presence of Branch Prediction
 and Caches Fast Sorting on Modern Computers. University of Dublin, 2005.
+
+\bibitem{sedgewick}
+SEDGEWICK, Robert. WAYNE, Kevin. Algorithms. 4 Ed. Addison-Wesley. 2001
 
 \end{thebibliography}
 
