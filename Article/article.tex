@@ -1,6 +1,6 @@
 
 
-\documentclass[conference]{IEEEtran}
+\documentclass[conference,onecolumn]{IEEEtran}
 
 \usepackage[utf8]{inputenc}
 \usepackage[pdftex]{graphicx}
@@ -318,7 +318,6 @@ O experimento revelou que para esta organização do conjunto os algoritmos Heap
 \begin{figure}
 
 \centering
->>>>>>> 82c77f9614f7f1bfa71d86404636ad8ed4b247c4
 \pgfplotstableread{plots/aleatorio.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.5,-0.1)}, anchor=north}]
@@ -457,7 +456,7 @@ O estudo experimental, apresentado na Figura~\ref{image: graph-bubble} realizado
 
 \begin{figure}
 
-
+\centering
 \pgfplotstableread{plots/bubble-sort.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.4,1)}}]
@@ -477,6 +476,7 @@ Em contraponto, a implementação com  com melhorias do algoritmo \textit{Bubble
 
 \begin{figure}
 
+\centering
 \pgfplotstableread{plots/bubble-sort-adv.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.4,1)}}]
@@ -498,7 +498,7 @@ A análise experimental realizada para o algoritmo \textit{Quick Sort} com pivô
 
 \begin{figure}
 
-
+\centering
 \pgfplotstableread{plots/quick-sort-pivo-inicial.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.4,1)}}]
@@ -522,6 +522,7 @@ Vale-se destacar a disparidade na grandeza de tempo entre a abordagem de pivô e
 \begin{figure}
 \label{image: graph-quick-central}
 
+\centering
 \pgfplotstableread{plots/quick-sort-pivo-central.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.4,1)}}]
@@ -623,11 +624,11 @@ Por fim, o comparativo da abordagem de ordenação baseada em seleção, represe
 \label{image: graph-selecao}
 \end{figure}
 
-<<<<<<< HEAD
 \section{Análise quantidade de trocas realizadas}
 
 Além da análise experimental que visa comparar os tempos de execução entre os diversos algoritmos de ordenação, também foi aplicada uma análise com objetivo de comparar a quantidade de trocas de posições de elementos durante uma ordenação. Foi medido durante a execução dos algoritmos a quantidade máxima de troca que eles realizam de acordo com os três tipos de entrada (aleatória, crescente e decrescente) em diferentes dimensões.
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/aleatorio-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -653,7 +654,10 @@ Além da análise experimental que visa comparar os tempos de execução entre o
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem aleatória}
+\end{figure}
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/crescente-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -679,7 +683,10 @@ Além da análise experimental que visa comparar os tempos de execução entre o
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem crescente}
+\end{figure}
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/decrescente-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -705,6 +712,8 @@ Além da análise experimental que visa comparar os tempos de execução entre o
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem decrescente}
+\end{figure}
 
 \subsection{Análise número de trocas por algoritmo}
 
@@ -712,6 +721,7 @@ Após observar o comportamento do número de trocas com uma visão de todos os a
 
 \subsubsection{Bubble Sort Clássico}
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/bubble-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -726,9 +736,12 @@ xlabel=n elementos]
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Bubble Sort clássico}
+\end{figure}
 
 \subsubsection{Bubble Sort Melhorado}
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/bubble-sort-adv-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -743,11 +756,14 @@ xlabel=n elementos]
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Bubble Sort melhorado}
+\end{figure}
 
 \subsubsection{Quick Sort Pivô inicial}
 
 O algoritmo Quick Sort com implementação colocando sempre o pivô como ponto inicial tem números de trocas que apresentam comportamento linear. O maior número de trocas ocorre quando a entrada está organizada em ordem aleatória, entretanto os casos em que a entrada está em ordem crescente ou decrescente a quantidade de trocas é a mesma para essas duas entradas, vale ressaltar ainda que a quantidade de trocas na entrada em ordem aleatória é bem maior que a quantidade de trocas nas duas outras configurações de entrada. Observe o Gráfico \ref{graf:quick-inicial-troca}
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/quick-sort-pivo-inicial-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -763,11 +779,14 @@ xlabel=n elementos]
 \label{graf:quick-inicial-troca}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Quick Sort implementação com pivô inicial}
+\end{figure}
 
 \subsubsection{Quick Sort Pivô Central}
 
 Quando o algoritmo Quick Sort é implementado com o pivo sendo sempre o elemento central o comportamento de número de trocas é diferente a implementação com pivô sendo sempre o inicial. Neste caso, o maior número de trocas absoluto continua sendo para a entrada organizada de modo aleatório, contudo a diferença entra a implementação discutida anteriormente está que o número de trocas para entradas em ordem crescente e decrescente é diferente, tendo maior quantidade de trocas para a decrescente e menor para a entrada em ordem crescente. Observe o Gráfico \ref{graf:quick-central-troca}.
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/quick-sort-pivo-central-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -783,9 +802,12 @@ xlabel=n elementos]
 \label{graf:quick-central-troca}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Quick Sort implementação com pivô central}
+\end{figure}
 
 \subsubsection{Insertion Sort}
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/insertion-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -800,11 +822,14 @@ xlabel=n elementos]
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Insertion Sort}
+\end{figure}
 
 \subsubsection{Shell Sort}
 
 O Shell Sort não realiza nenhuma troca quando a entrada de dados está em ordem decrescente, a verificação presente no corpo do algoritmo garante isso. Contudo, para os outros demais casos existem uma quantidade de trocas significativa de comportamento não linear, porem quanto maior a dimensão da entra maior o número de trocas. A maior quantidade de trocas ocorre com a entrada em ordem decrescente e a segunda maior em ordem aleatória. Observe o Gráfico \ref{graf:shell-troca}.
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/shell-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -820,11 +845,14 @@ xlabel=n elementos]
 \label{graf:shell-troca}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Shell Sort}
+\end{figure}
 
 \subsubsection{Selection Sort}
 
 No algoritmo Selection Sort todas as quantidades de trocas tem valores bem espaçados entre as três configurações de entrada. Neste caso, a que menos realiza trocas são quando a entrada está em ordem crescente, neste caso, nenhuma troca é realizada, pois, o algoritmo verifica que os elementos já estão em ordem correta. Já nas duas demais configurações de entrada ocorrem um número de trocas acentuado, sendo o maior deles na entrada em ordem aleatória e a segundo maior na entrada em ordem decrescente. Observe o Gráfico \ref{graf:selection-troca}.
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/selection-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -840,11 +868,14 @@ xlabel=n elementos]
 \label{graf:selection-troca}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Selection Sort}
+\end{figure}
 
 \subsubsection{Merge Sort}
 
 O algoritmo Merge Sort independentemente da configuração de entrada sempre irá realizar o mesmo número de trocas em seu processo de ordenação. Assim, independente se a entrada contem elementos organizados em ordem aleatória, crescente ou decrescente, o número de troca será o mesmo. Vale ressaltar ainda que conforme a quantidade de elementos aumenta, maior será o número de trocas formando um comportamento linear. Observe o Gráfico \ref{graf:merge-troca}.
 
+\begin{figure}
 \begin{center}
 \pgfplotstableread{plots/swap/merge-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
@@ -860,6 +891,8 @@ xlabel=n elementos]
 \label{graf:merge-troca}
 \end{tikzpicture}
 \end{center}
+\caption{Número de trocas realizadas pelo algoritmo Merge Sort}
+\end{figure}
 
 \subsubsection{Heap Sort}
 
@@ -867,6 +900,8 @@ No caso do algoritmo Heap Sort, é constatado também que conforme o número de 
 
 Contudo, existe uma mínima diferença entre a quantidade de trocas em cada configuração de entrada. A menor quantidade de trocas acontece quando a entrada de dados são elementos em ordem decrescente, já a maior quantidade de trocas ocorre quando os elementos está dispostos em ordem aleatória, caso os elementos estejam em ordem aleatória a quantidade de trocas é menor que a crescente e maior que a de ordem decrescente. Observe o Gráfico \ref{graf:heap-troca}.
 
+\begin{figure}
+\begin{center}
 \pgfplotstableread{plots/swap/heap-sort-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[minor tick num=1,
@@ -880,6 +915,9 @@ xlabel=n elementos]
 \end{axis}
 \label{graf:heap-troca}
 \end{tikzpicture}
+\end{center}
+\caption{Número de trocas realizadas pelo algoritmo Heap Sort}
+\end{figure}
 
 ~\\
 
