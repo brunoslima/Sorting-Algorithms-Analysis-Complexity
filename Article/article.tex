@@ -7,6 +7,7 @@
 %\usepackage{unicode-math}
 %\usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{float}
 
 \usepackage{filecontents,pgfplots}
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -53,6 +54,9 @@ Presidente Prudente, Brasil \\
 % make the title area
 \maketitle
 
+\thispagestyle{plain}
+\pagestyle{plain}
+
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 %\begin{abstract}
@@ -70,7 +74,7 @@ Presidente Prudente, Brasil \\
 
 Diversas aplicações da atualidade envolvem um grande volume de dados, desde aplicações comerciais simples a grande aplicações científicas, todas estão nesse contexto. A organização estrutural de conjunto de dados, além de prover melhor usabilidade, também otimiza tempo e o consumo de recursos, tanto de processamento quanto de memória para a execução.
 
-Neste contexto, este trabalho apresenta uma análise dos principais algoritmos de ordenação, o qual está dividido nas seguintes seções: na Seção 2, são apresentados os algoritmos de ordenação utilizados, indicando a abordagem utilizada no processo juntamente com a sua respectiva análise assintótica. Na Seção 3, são apresentados os estudos comparativos analisando a variações dos conjunto de dados de entrada e abordagens utilizadas na ordenação. Por fim, na Seção 4, são apresentadas as considerações finais do estudo.
+Neste contexto, este trabalho apresenta uma análise dos principais algoritmos de ordenação, o qual está dividido nas seguintes seções: na Seção 2, são apresentados os algoritmos de ordenação utilizados, indicando a abordagem utilizada no processo juntamente com a sua respectiva análise assintótica. Na Seção 3, são apresentadas as análises experimental aplicadas em conjuntos de entradas com configurações variadas. A Seção 4 apresenta brevemente uma comparação do número de trocas que cada algoritmo realiza para ordenar cada conjunto de entrada. Por fim, na Seção 5, são apresentadas as considerações finais do estudo.
 
 
 \section{Algoritmos de Ordenação}
@@ -81,16 +85,15 @@ Neste contexto, este trabalho apresenta uma análise dos principais algoritmos d
 
 \subsubsection{Bubble Sort}
 
-O presente algoritmo utilizada a abordagem de troca, através da permutação de elementos vizinhos, seguindo a ideia de densidade dos elementos, em que pode-se optar por varrer o arranjo levando o maior elemento (mais pesado) ao fim do vetor, ou conduzir o menor elemento (mais leve) ao início desse. Esse passo (uma das duas opções excludentemente) é realizado sucessivamente para os subvetores não ordenados remanescentes até que o vetor esteja ordenado como um todo.
+O presente algoritmo utilizada a abordagem de troca, através da permutação de elementos vizinhos, seguindo a ideia de densidade dos elementos, em que pode-se optar por varrer o arranjo levando o maior elemento (mais pesado) ao fim do vetor, ou conduzir o menor elemento (mais leve) ao início desse. Esse passo (uma das duas opções excludentemente) é realizado sucessivamente para os subvetores não ordenados remanescentes até que o vetor esteja ordenado como um todo \cite{biggar}.
 
-A abordagem original prevê que todos os elementos adjacentes sejam comparados através de $n - 1$ iterações, porém é possível que o arranjo esteja ordenado sem que sejam necessárias todos esses ciclos. De modo a prevenir operações desnecessárias, algumas abordagens utilizam-se de \textit{flags} para a detecção de trocas, caso a última iteração tenha ao menos uma ocorrência, há necessidade de pelo menos mais uma iteração, em caso negativo, o processo pode ser encerrado.
+A abordagem original prevê que todos os elementos adjacentes sejam comparados através de $n - 1$ iterações, porém é possível que o arranjo esteja ordenado sem que sejam necessárias todos esses ciclos. De modo a prevenir operações desnecessárias, algumas abordagens utilizam-se de \textit{flags} para a detecção de trocas, caso a última iteração tenha ao menos uma ocorrência, há necessidade de pelo menos mais uma iteração, em caso negativo, o processo pode ser encerrado \cite{biggar}.
 
-\begin{figure}
+\begin{figure}[H]
 
   \centering
-    \includegraphics[width=0.4\textwidth]{images/bubble.png}
-    \label{image:modelo}
-    \caption{Modelo de comparação de elementos adjacentes.}
+    \includegraphics[width=0.6\textwidth]{images/bubble.png}
+    \caption{Modelo de comparação de elementos adjacentes.}        		   \label{image:modelo}
 \end{figure}
 
 A Figura~\ref{image:modelo} apresenta a abordagem de ordenação utilizada pelo algoritmo referido.\\
@@ -105,9 +108,9 @@ Complexidade:
 ~\\
 \subsubsection{Quick Sort}
 
-O algoritmo foi proposto por C.A.R. Hoare em 1962, tem como estratégia a divisão do arranjo original em partições a partir da determinação de um pivô. Para qualquer abordagem de escolha do pivô, em cada partição busca-se encontrar os elementos maiores que o pivô a partir do início e os menores a partir do fim do arranjo, os quais são trocados de posição aos pares, de modo a ordenar a partição, se necessário também através da quebra de subpartições.
+O algoritmo foi proposto por C.A.R. Hoare em 1962, tem como estratégia a divisão do arranjo original em partições a partir da determinação de um pivô. Para qualquer abordagem de escolha do pivô, em cada partição busca-se encontrar os elementos maiores que o pivô a partir do início e os menores a partir do fim do arranjo, os quais são trocados de posição aos pares, de modo a ordenar a partição, se necessário também através da quebra de subpartições \cite{ziviani}.
 
-Em relação a abordagem de escolha de pivô, há diversas técnicas que buscam explorar possíveis características dos elementos do arranjo. Dentre as principais, pode-se destacar a escolha do elemento inicial ou final do vetor, o uso de propriedades estatísticas como a média e mediana, entre outras. O principal objetivo de qualquer uma dessas estratégias é minimizar a ocorrência dos piores casos de recorrência, resultando em um comportamento assintótico quadrático.
+Em relação a abordagem de escolha de pivô, há diversas técnicas que buscam explorar possíveis características dos elementos do arranjo. Dentre as principais, pode-se destacar a escolha do elemento inicial ou final do vetor, o uso de propriedades estatísticas como a média e mediana, entre outras. O principal objetivo de qualquer uma dessas estratégias é minimizar a ocorrência dos piores casos de recorrência, resultando em um comportamento assintótico quadrático \cite{ziviani}.
 
 Geralmente, os piores caso desse algoritmo consistem na escolha de pivô como elemento mínimo ou máximo, para entradas de dados crescentes e decrescentes.\\
 
@@ -124,7 +127,7 @@ Complexidade:
 
 \subsubsection{Insertion Sort}
 
-A estratégia de ordenação por inserção consiste em um dos métodos mais simples, sendo extremamente eficiente em conjuntos pequenos, com estratégia de percorrer o esquerdo da esquerda para a direita deixando os elementos ordenados  à esquerda. Uma situação cotidiana que aplica a abordagem referida é a inserção de cartas na mão de um jogador, seguindo a estrutura de dados deque.\\
+A estratégia de ordenação por inserção consiste em um dos métodos mais simples, sendo extremamente eficiente em conjuntos pequenos, com estratégia de percorrer o esquerdo da esquerda para a direita deixando os elementos ordenados  à esquerda. Uma situação cotidiana que aplica a abordagem referida é a inserção de cartas na mão de um jogador, seguindo a estrutura de dados deque \cite{biggar}.\\
 
 Complexidade:
 \begin{itemize}
@@ -136,16 +139,16 @@ Complexidade:
 ~\\
 \subsubsection{Shell Sort}
 
-O algoritmo Shell Sort foi proposto por Donald Shell em 1959, consistindo em um dos métodos de ordenação mais eficientes dentre os modelos quadráticos, baseando-se no Insertion Sort, a partir de comparações com elementos não adjacentes, desse modo, facilitando o deslocamento dos menores elementos para o início do vetor através do uso de saltos regressivos de tamanho.
+O algoritmo Shell Sort foi proposto por Donald Shell em 1959, consistindo em um dos métodos de ordenação mais eficientes dentre os modelos quadráticos, baseando-se no Insertion Sort, a partir de comparações com elementos não adjacentes, desse modo, facilitando o deslocamento dos menores elementos para o início do vetor através do uso de saltos regressivos de tamanho \cite{ziviani}.
 
-O grande diferencial desse método é a utilização dos saltos, porém não existe uma abordagem única para o cálculo do tamanho dos saltos, consistindo em um fator determinante na mensuração da complexidade assintótica. Dentre os principais modelos têm-se o $n$ primeiros múltiplos de um fator ou combinação de fatores (ex. $2^p3^q$) ou os $n$ primeiros números primos.
+O grande diferencial desse método é a utilização dos saltos, porém não existe uma abordagem única para o cálculo do tamanho dos saltos, consistindo em um fator determinante na mensuração da complexidade assintótica \cite{ziviani}. Dentre os principais modelos têm-se o $n$ primeiros múltiplos de um fator ou combinação de fatores (ex. $2^p3^q$) ou os $n$ primeiros números primos.
 
-\begin{figure}
+\begin{figure}[H]
 
   \centering
-    \includegraphics[width=0.4\textwidth]{images/shell.jpg}
-    \label{image:shell}
+    \includegraphics[width=0.8\textwidth]{images/shell.jpg}
      \caption{Modelo de partições com elementos distantes em diferentes tamanhos.}
+      \label{image:shell}
 \end{figure}
 
 A Figura~\ref{image:shell} apresenta a ordenação das partições de elementos distantes, com saltos de tamanho 40, 13 e 4 respectivamente, partindo do arranjo inicial e alcançando o conjunto ordenado.\\
@@ -160,9 +163,9 @@ Complexidade:
 
 \subsubsection{Selection Sort}
 
-O algoritmo Selection Sort, trata-se modelo mais básico de algoritmo de ordenação, utilizada muitas em ambientes naturais e é mais intuitivo para os seres humanos, pois se utiliza da abordagem de força bruta, sem aproveitar nenhuma peculiaridade do conjunto de dados ou vantagem que possa ser tomada. Sua estratégia consiste em percorrer todo o arranjo $n$, comparando todos os elementos de forma a encontrar o menor, em seguida, o segundo menor e assim por diante, de modo a organizar todo o conjunto.
+O algoritmo Selection Sort, trata-se modelo mais básico de algoritmo de ordenação, utilizada muitas em ambientes naturais e é mais intuitivo para os seres humanos, pois se utiliza da abordagem de força bruta, sem aproveitar nenhuma peculiaridade do conjunto de dados ou vantagem que possa ser tomada. Sua estratégia consiste em percorrer todo o arranjo $n$, comparando todos os elementos de forma a encontrar o menor, em seguida, o segundo menor e assim por diante, de modo a organizar todo o conjunto \cite{ziviani}\cite{biggar}.
 
-O grande destaque para esse algoritmo, dentro do contexto das abordagens quadráticas, consiste no reduzido número de trocas, que no máximo ocorre $n$ vezes.\\
+O grande destaque para esse algoritmo, dentro do contexto das abordagens quadráticas, consiste no reduzido número de trocas, que no máximo ocorre $n$ vezes \cite{biggar}.\\
 
 Complexidade:
 \begin{itemize}
@@ -172,19 +175,19 @@ Complexidade:
 ~\\
 \subsubsection{Heap Sort}
 
-O algoritmo Heap Sort, proposto por J.W.J. Williams em 1964, possui uma das implementações mais sofisticadas baseando-se em uma fila de prioridades, através da utilização de um vetor para a representação de uma árvore binária, caracterizando como um dos algoritmos mais estáveis de ordenação, independentemente do modelo de dados de entrada. 
+O algoritmo Heap Sort, proposto por J.W.J. Williams em 1964, possui uma das implementações mais sofisticadas baseando-se em uma fila de prioridades, através da utilização de um vetor para a representação de uma árvore binária, caracterizando como um dos algoritmos mais estáveis de ordenação, independentemente do modelo de dados de entrada \cite{ziviani}. 
 
-\begin{figure}
+\begin{figure}[H]
   
   \centering
-    \includegraphics[width=0.4\textwidth]{images/heapsort.jpg}
-    \label{image:arvore}
+    \includegraphics[width=0.6\textwidth]{images/heapsort.jpg}
   \caption{Equivalência entre a árvore e arranjo.}
+      \label{image:arvore}
 \end{figure}
 
 A Figura~\ref{image:arvore} apresenta o processo de equivalência entre a estrutura de dados Heap na forma de árvore e arranjo.
 
-O algoritmo consiste na construção de um \textit{max heap} (cuja principal propriedade consiste em que sempre o elemento raiz é maior que seus filhos, para todas as sub-árvores possíveis), em seguida, aplica-se a troca do primeiro elemento pelo último para todos os elementos do conjunto (equivalente a remover todos os elementos do arranjo), e posteriormente, rearranjar a estrutura para cada elemento, desse modo é obtido um vetor ordenado de modo crescente ao termino do processo.\\
+O algoritmo consiste na construção de um \textit{max heap} (cuja principal propriedade consiste em que sempre o elemento raiz é maior que seus filhos, para todas as sub-árvores possíveis), em seguida, aplica-se a troca do primeiro elemento pelo último para todos os elementos do conjunto (equivalente a remover todos os elementos do arranjo), e posteriormente, rearranjar a estrutura para cada elemento, desse modo é obtido um vetor ordenado de modo crescente ao termino do processo \cite{ziviani}.\\
 
 Complexidade:
 \begin{itemize}
@@ -207,12 +210,12 @@ As posições situações de ocorrência são as seguintes:
 
 Contudo, de modo invariável, todos os casos tem a mesma complexidade assintótica. Adicionalmente, vale-se destacar que diferentemente dos demais algoritmos que não se utilizam de memória adicional, o algoritmo Merge Sort tem complexidade espacial de tamanho $n$, que em dadas situações, deve ser levada em consideração.
 
-\begin{figure}
+\begin{figure}[H]
   
   \centering
-    \includegraphics[width=0.4\textwidth]{images/merge.png}
-    \label{image:merge}
+    \includegraphics[width=0.55\textwidth]{images/merge.png}
   \caption{Abordagem de divisão e conquista do algoritmo.}
+     \label{image:merge}
 \end{figure}
 
 A Figura~\ref{image:merge} apresenta o processo de divisão e conquista utilizado no algoritmo.\\
@@ -240,12 +243,12 @@ Inicialmente, através da Figura~\ref{image: crescente}, pode-se observar que as
 
 Em relação aos outros algoritmos, esses apresentaram melhores desempenhos, assemelhando-se a algoritmos lineares, devido a presença de estratégias que reduzem o número de operações sobre os elementos, com destaque ao \textit{Insertion Sort}, um algoritmo inicialmente quadrático, torna-se o mais eficiente entre os analisados.
 
-\begin{figure}
+\begin{figure}[H]
 
 
 \centering
 \pgfplotstableread{plots/crescente.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.5]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
 \addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
 \addlegendentry{Bubble Sort}
@@ -280,10 +283,10 @@ Em seguida, no segundo conjunto, enquadram-se os algoritmos \textit{Insertion So
 
 O último caso dessa análise estão os algoritmos \textit{Heap Sort}, \textit{Merge Sort}, \textit{Shell Sort} e \textit{Quick Sort} com pivô central, demonstrando que em dadas situações um algoritmo baseado em inserção pode se equiparar a implementações mais sofisticadas.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \pgfplotstableread{plots/decrescente.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.5]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
 \addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
 \addlegendentry{Bubble Sort}
@@ -315,11 +318,11 @@ O último caso dessa análise estão os algoritmos \textit{Heap Sort}, \textit{M
 
 O experimento revelou que para esta organização do conjunto os algoritmos Heap Sort, Merge Sort, Shell e Quick Sort para ambas implementações tiveram um desempenho considerado superior com relação aos demais. Os algoritmos de pior rendimento consistem nas duas implementações do Bubble Sort.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/aleatorio.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.5]
 \begin{axis}[legend style={at={(0.5,-0.1)}, anchor=north}]
 \addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
 \addlegendentry{Bubble Sort}
@@ -357,11 +360,11 @@ Por fim, os algoritmos de pior rendimento consistem nas duas implementações do
 
 Por meio da Figura~\ref{image: graph-insertion}, permite observar que o algoritmo Insertion Sort consiste em um excelente opção para arranjos quase ordenados, pois caracteriza-se com complexidade quase linear, podendo ser muito útil em cenários que haja a construção do conjunto ordenado por demanda, indicado pela curva do arranjo crescente, contudo para os demais casos este torna-se próximo da complexidade quadrática, não consistindo na melhor escolha para tais situações.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/insertion-sort.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -381,11 +384,11 @@ O gráfico representado pela Figura~\ref{image: graph-shell} demostra análise p
 Como a sua implementação consiste em uma melhoria da abordagem de inserção, a mesmas indicações de uso valem para este algoritmo.
 
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/shell-sort.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -403,12 +406,12 @@ Como a sua implementação consiste em uma melhoria da abordagem de inserção, 
 
 Através do gráfico representado pela Figura~\ref{image: graph-selection}, pode-se concluir que o algoritmo de ordenação Selection Sort, apesar de ser indiferente quanto a organização prévia dos elementos pertencentes ao arranjo e ter uma das mais simples implementações, caracterizando-se como força-bruta, torna-se pior a medida que o número de elementos cresce, cuja curva se assemelha às quadráticas.
 
-\begin{figure}
+\begin{figure}[H]
 
 
 \centering
 \pgfplotstableread{plots/selection-sort.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -431,11 +434,11 @@ Para a análise do algoritmo de ordenação \textit{Heap Sort} é possível obse
 
 Como grande destaque, de modo invariante para entrada de dados, este consiste o único algoritmo que realizou todos os testes experimentais dentro da grandeza de centenas de millissegundos, não alcançando os 300 ms para as maiores entradas de dados.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/heap-sort.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -454,11 +457,11 @@ Como grande destaque, de modo invariante para entrada de dados, este consiste o 
 
 O estudo experimental, apresentado na Figura~\ref{image: graph-bubble} realizado com o método de ordenação \textit{Bubble Sort} original, demonstra que independentemente da entrada de dados, o comportamento é semelhante, considerado de ordem quadrática, em que, de modo adicional, para um vetor crescente seu desempenho foi levemente superior aos demais devido ao número reduzido de trocas entre elementos.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/bubble-sort.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -474,11 +477,11 @@ O estudo experimental, apresentado na Figura~\ref{image: graph-bubble} realizado
 
 Em contraponto, a implementação com  com melhorias do algoritmo \textit{Bubble Sort}, representado pela Figura~\ref{image: graph-bubble-adv}, apresenta como melhor caso o arranjo crescente, registrando um desempenho linear. Para os demais casos de entrada, o comportamento quadrático novamente é registrado, e torna-se mais evidente de modo proporcional ao crescimento do conjunto de entrada.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/bubble-sort-adv.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -496,11 +499,11 @@ Em contraponto, a implementação com  com melhorias do algoritmo \textit{Bubble
 \subsubsection{Quick Sort}
 A análise experimental realizada para o algoritmo \textit{Quick Sort} com pivô inicial, representada pela Figura~\ref{image: graph-quick-inicial} apresentou bom desempenho para um conjunto aleatório, contudo para ordem crescente e decrescente, o processo de teste determinou desempenho inferior de forma considerável.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/quick-sort-pivo-inicial.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -519,12 +522,10 @@ Por outro lado, considerando a implementação do algoritmo \textit{Quick Sort} 
 
 Vale-se destacar a disparidade na grandeza de tempo entre a abordagem de pivô e central. Em ambos os casos, para a maior entrada de dados, a primeira opção requereu tempo superior a 1 000 000 ms, enquanto o segundo requereu um pouco mais que 150 ms.
 
-\begin{figure}
-\label{image: graph-quick-central}
-
+\begin{figure}[H]
 \centering
 \pgfplotstableread{plots/quick-sort-pivo-central.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -536,6 +537,7 @@ Vale-se destacar a disparidade na grandeza de tempo entre a abordagem de pivô e
 \end{axis}
 \end{tikzpicture}
 \caption{Análise experimental do algoritmo Quick Sort com pivô central.}
+\label{image: graph-quick-central}
 \end{figure}
 
 ~\\
@@ -543,11 +545,11 @@ Vale-se destacar a disparidade na grandeza de tempo entre a abordagem de pivô e
 
 Por fim, para o algoritmo \textit{Merge Sort} que possui implementação baseada em divisão e conquista, a análise representada pela Figura~\ref{image: graph-merge}, permite o processo de ordenação de modo quase indiferente em relação ao modelo de entrada de dados. De modo específico, é possível observar uma pequena vantagem para conjunto decrescentes e crescentes em detrimento ao aleatório.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/merge-sort.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
 \addlegendentry{Aleatório}
@@ -570,10 +572,10 @@ Todas as comparações abaixo foram realizadas utilizando os casos para conjunto
 
 A comparação entre os algoritmos com abordagem de ordenação baseada em inserção, representado pela Figura~\ref{image: graph-insercao} indica uma enorme superioridade para o algoritmo \textit{Shell Sort} em detrimento ao \textit{Insertion Sort}, a qual se eleva ainda mais após entradas de tamanho 500 000, demonstrando que uso de saltos para ordenação em sub-partições é essencial, proporcionando grande ganho de desempenho.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \pgfplotstableread{plots/insercao.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.45,1)}}]
 \addplot [black,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
 \addlegendentry{Insertion Sort}
@@ -588,11 +590,11 @@ A comparação entre os algoritmos com abordagem de ordenação baseada em inser
 \subsubsection{Abordagem de troca}
 
 Para o comparativo dos algoritmos de ordenação baseados em troca, através da Figura~\ref{image: graph-troca}, pode-se observar que o algoritmo \textit{Quick Sort} com pivô central tem custo de processamento extremamente inferior em relação ao \textit{Bubble Sort} com melhorias. Desse modo, vale ressaltar que a ordenação através de sub-partições e a escolha adequada de um pivô proporcionam um resultado muito superior do que a comparação direta entre vizinhos usada no \textit{Bubble Sort}.
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.4,1)}}]
 \addplot [black,very thick] table [x={n}, y={bubble}] {\pistonkinetics};
 \addlegendentry{Bubble Sort}
@@ -608,11 +610,11 @@ Para o comparativo dos algoritmos de ordenação baseados em troca, através da 
 \subsubsection{Abordagem de seleção}
 Por fim, o comparativo da abordagem de ordenação baseada em seleção, representada pela Figura~\ref{image: graph-selecao}, indique um desempenho extremamente superior do algoritmo \textit{Heap Sort}, que utiliza a ideia de fila de prioridades, em detrimento ao algoritmo \textit{Selection Sort}, que utiliza uma ideia intuitiva, porém caracterizada como força-bruta, sem qualquer inteligência do método ou aproveitamento de propriedades do conjunto de dados.
 
-\begin{figure}
+\begin{figure}[H]
 
 \centering
 \pgfplotstableread{plots/selecao.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[legend style={at={(0.45,1)}}]
 \addplot [black,very thick] table [x={n}, y={selection}] {\pistonkinetics};
 \addlegendentry{Selection Sort}
@@ -628,11 +630,15 @@ Por fim, o comparativo da abordagem de ordenação baseada em seleção, represe
 
 Além da análise experimental que visa comparar os tempos de execução entre os diversos algoritmos de ordenação, também foi aplicada uma análise com objetivo de comparar a quantidade de trocas de posições de elementos durante uma ordenação. Foi medido durante a execução dos algoritmos a quantidade máxima de troca que eles realizam de acordo com os três tipos de entrada (aleatória, crescente e decrescente) em diferentes dimensões.
 
-\begin{figure}
+\subsubsection{Entrada aleatória}
+
+A Figura \ref{graf:trocas-aleatoria} apresenta um gráfico que contem o número de trocas de todos os algoritmos. Nesta figura é possivel observar em amarelo representado pelo Insertion Sort que realiza um maior número de trocas, existe uma sobreposição na linha em amarelo, pois o Bubble Sort e o Bubble Sort também tem exatamente o mesmo comportamento que o Insertion Sort, além desses o Shell Sort também realiza um número grande de trocas. Os demais algoritmos não são possíveis de ser observados nesta imagem, por terem número de trocas bem menores, assim eles foram colocados isoladamente na Figura \ref{graf:trocas-aleatoria-menores}.
+
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/aleatorio-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
-\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\begin{tikzpicture}[scale=1.3]
+\begin{axis}[legend style={at={(1.4,0.85)},anchor=north}]
 \addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
 \addlegendentry{Bubble Sort}
 \addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
@@ -654,28 +660,75 @@ Além da análise experimental que visa comparar os tempos de execução entre o
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem aleatória}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem aleatória.}
+\label{graf:trocas-aleatoria}
 \end{figure}
 
-\begin{figure}
+Na Figura \ref{graf:trocas-aleatoria-menores} é possível observar os algoritmos que realizam menores números de trocas em entrada aleatória. Dentre eles o Heap Sort e o Merge Sort realizam mais trocas, seguidos das duas implementações do Quick Sort e é notório também que o algoritmo Selection Sort realiza menos trocas em conjuntos de entrada aleatória. Todos os algoritmos para essa situação tem um comportamento linear.
+
+\begin{figure}[H]
+\begin{center}
+\pgfplotstableread{plots/swap/aleatorio-troca-menores.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1.3]
+\begin{axis}[legend style={at={(1.4,0.65)},anchor=north}]
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem aleatória.}
+\label{graf:trocas-aleatoria-menores}
+\end{figure}
+
+\subsubsection{Entrada crescente}
+
+A Figura \ref{graf:trocas-crescente} apresenta um gráfico com o comportamento em relação ao número de trocas para uma entrada crescente. Contudo visualiza-los todos juntos causa uma certa sobreposição. Para melhorar a visualização das análises foram exibidos juntos os algoritmos que mais fazem trocas, os que menos fazem trocas e os que fazem trocas em valores intermediários com relação aos que mais fazem ou que menos fazem.
+
+\begin{figure}[H]
+\begin{center}
+\pgfplotstableread{plots/swap/crescente-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1.3]
+\begin{axis}[legend style={at={(1.4,0.85)},anchor=north}]
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem crescente.}
+\label{graf:trocas-crescente}
+\end{figure}
+
+A Figura \ref{graf:trocas-crescente-mais} apresenta a evolução do número de trocas dos algoritmos que mais fazem trocas, sendo eles Heap Sort e Merge Sort. O número de trocas que ambos fazem é bem semelhante, contudo o Merge Sort realiza um pouco mais trocas que o Heap Sort.
+
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/crescente-troca.dat}{\pistonkinetics}
 \begin{tikzpicture}[scale=1]
 \begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
-\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
-\addlegendentry{Bubble Sort}
-\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
-\addlegendentry{Bubble Sort Avançado}
-\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
-\addlegendentry{Quick Sort Inicial}
-\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
-\addlegendentry{Quick Sort Central}
-\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
-\addlegendentry{Insertion Sort}
-\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
-\addlegendentry{Shell Sort}
-\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
-\addlegendentry{Selection Sort}
 \addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
 \addlegendentry{Merge Sort}
 \addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
@@ -683,14 +736,61 @@ Além da análise experimental que visa comparar os tempos de execução entre o
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem crescente}
+\caption{Algoritmos que mais realizam trocas para entrada com elementos em ordem crescente.}
+\label{graf:trocas-crescente-mais}
 \end{figure}
 
-\begin{figure}
+A Figura \ref{graf:trocas-crescente-menos} apresenta os algoritmos que menos realizam trocas para entrada crescente. No caso, eles não realizam nenhuma troca, pois seu principio de implementação verifica a necessidade ou não de realizar trocas, como o conjunto já está ordenado não é necessário realizar trocas.
+
+\begin{figure}[H]
+\begin{center}
+\pgfplotstableread{plots/swap/crescente-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[legend style={at={(1.4,0.65)},anchor=north}]
+\addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
+\addlegendentry{Bubble Sort}
+\addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
+\addlegendentry{Bubble Sort Avançado}
+\addplot [yellow,very thick] table [x={n}, y={insertion}] {\pistonkinetics};
+\addlegendentry{Insertion Sort}
+\addplot [gray,very thick] table [x={n}, y={shell}] {\pistonkinetics};
+\addlegendentry{Shell Sort}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Algoritmos que menos realizam trocas para entrada com elementos em ordem crescente..}
+\label{graf:trocas-crescente-menos}
+\end{figure}
+
+Por fim, a Figura \ref{graf:trocas-crescente-mediano} apresenta os algoritmos que não fazem nem o maior nem o menor número de trocas, sendo eles as implementações do Quick Sort. Quando o Quick Sort é implementado de modo que o pivô é central ele faz menos trocas se comparado com o Quick Sort de implementação de pivô inicial.
+
+\begin{figure}[H]
+\begin{center}
+\pgfplotstableread{plots/swap/crescente-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1.3]
+\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Algoritmos que realizam um número mediano de trocas para entrada com elementos em ordem crescente..}
+\label{graf:trocas-crescente-mediano}
+\end{figure}
+
+\subsubsection{Entrada decrescente}
+
+Para entradas com elementos dispostos em ordem decrescente os algoritmos que mais fazem trocas para ordenar o conjunto são o Bubble Sort (ambas implementações) e o Insertion Sort, seguidos pelo Shell Sort, observe a Figura \ref{graf:trocas-decrescente}
+
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/decrescente-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
-\begin{axis}[legend style={at={(0.5,-0.1)},anchor=north}]
+\begin{tikzpicture}[scale=1.3]
+\begin{axis}[legend style={at={(1.4,0.85)},anchor=north}]
 \addplot [black,very thick] table [x={n}, y={bubble-class}] {\pistonkinetics};
 \addlegendentry{Bubble Sort}
 \addplot [red,very thick] table [x={n}, y={bubble-adv}] {\pistonkinetics};
@@ -712,39 +812,48 @@ Além da análise experimental que visa comparar os tempos de execução entre o
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem decrescente}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem decrescente.}
+\label{graf:trocas-decrescente}
+\end{figure}
+
+Na Figura anterior não foi possível observar com exatidão o numero de trocas dos demais algoritmos, então eles foram agrupados na Figura \ref{graf:trocas-decrescente-menos} que ilustra a evolução do número de trocas de cada um deles. O algoritmo que menos faz troca para esta configuração de entrada é o Selection Sort, seguido pelas implementações do Quick Sort. Dentre esses algoritmos o Merge Sort e Heap Sort fazem mais bem mais trocas, porem ainda não fazem mais trocas que o Bubble Sort e Insertion Sort. O Merge Sort realiza um pouco mais de trocas que o Heap Sort.
+
+\begin{figure}[H]
+\begin{center}
+\pgfplotstableread{plots/swap/decrescente-troca.dat}{\pistonkinetics}
+\begin{tikzpicture}[scale=1.3]
+\begin{axis}[legend style={at={(1.4,0.85)},anchor=north}]
+\addplot [blue,very thick] table [x={n}, y={quick-inicial}] {\pistonkinetics};
+\addlegendentry{Quick Sort Inicial}
+\addplot [green,very thick] table [x={n}, y={quick-central}] {\pistonkinetics};
+\addlegendentry{Quick Sort Central}
+\addplot [brown,very thick] table [x={n}, y={selection}] {\pistonkinetics};
+\addlegendentry{Selection Sort}
+\addplot [pink,very thick] table [x={n}, y={merge}] {\pistonkinetics};
+\addlegendentry{Merge Sort}
+\addplot [orange,very thick] table [x={n}, y={heap}] {\pistonkinetics};
+\addlegendentry{Heap Sort}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Número de trocas realizadas pelos algoritmos para entrada com elementos em ordem decrescente.}
+\label{graf:trocas-decrescente-menos}
 \end{figure}
 
 \subsection{Análise número de trocas por algoritmo}
 
 Após observar o comportamento do número de trocas com uma visão de todos os algoritmos juntos, agora é exposto esse comportamento considerando cada algoritmo individualmente, afim de perceber as diferenças existentes nos três tipos distintos de entradas (aleatório, crescente e decrescente).
 
-\subsubsection{Bubble Sort Clássico}
+\subsubsection{Bubble Sort e Insertion Sort}
 
-\begin{figure}
-\begin{center}
-\pgfplotstableread{plots/swap/bubble-sort-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
-\begin{axis}[minor tick num=1,
-xlabel=n elementos]
-\addlegendentry{Aleatório}
-\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
-\addlegendentry{Crescente}
-\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
-\addlegendentry{Decrescente}
-\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{Número de trocas realizadas pelo algoritmo Bubble Sort clássico}
-\end{figure}
+Considerando o número de trocas necessário para ordenar um conjunto de dados, após a análise realizada foi constatado que os algoritmos implementados: Bubble Sort (implementação clássica e melhorada) e Insertion Sort, tiveram o mesmo comportamento, ou seja, o mesmo número de trocas. Tal comportamento pode ser observado na Figura \ref{graf:bubble-sort-melhorado-troca}.
 
-\subsubsection{Bubble Sort Melhorado}
+Para a entrada crescente nenhuma troca foi realizada como era esperado, contudo para a entrada organizada em ordem decrescente tem-se um grande número de trocas para ordenar conjuntos maiores que 500000. A entrada aleatória é a que mais realiza trocas em conjuntos menores que 500000 elementos, porém para conjuntos maiores que isso a entrada decrescente passa a ter um número maior de trocas. Acredita-se que este comportamento ocorre devido ao conjunto com 1 milhão de elementos dispostos aleatoriamente por coincidência não seja necessário tantas trocas para ordena-lo.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/bubble-sort-adv-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
 \addlegendentry{Aleatório}
@@ -756,17 +865,18 @@ xlabel=n elementos]
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelo algoritmo Bubble Sort melhorado}
+\caption{Número de trocas realizadas pelo algoritmo Bubble Sort melhorado.}
+\label{graf:bubble-sort-melhorado-troca}
 \end{figure}
 
 \subsubsection{Quick Sort Pivô inicial}
 
 O algoritmo Quick Sort com implementação colocando sempre o pivô como ponto inicial tem números de trocas que apresentam comportamento linear. O maior número de trocas ocorre quando a entrada está organizada em ordem aleatória, entretanto os casos em que a entrada está em ordem crescente ou decrescente a quantidade de trocas é a mesma para essas duas entradas, vale ressaltar ainda que a quantidade de trocas na entrada em ordem aleatória é bem maior que a quantidade de trocas nas duas outras configurações de entrada. Observe o Gráfico \ref{graf:quick-inicial-troca}
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/quick-sort-pivo-inicial-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
 \addlegendentry{Aleatório}
@@ -776,20 +886,20 @@ xlabel=n elementos]
 \addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
-\label{graf:quick-inicial-troca}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelo algoritmo Quick Sort implementação com pivô inicial}
+\caption{Número de trocas realizadas pelo algoritmo Quick Sort implementação com pivô inicial.}
+\label{graf:quick-inicial-troca}
 \end{figure}
 
 \subsubsection{Quick Sort Pivô Central}
 
 Quando o algoritmo Quick Sort é implementado com o pivo sendo sempre o elemento central o comportamento de número de trocas é diferente a implementação com pivô sendo sempre o inicial. Neste caso, o maior número de trocas absoluto continua sendo para a entrada organizada de modo aleatório, contudo a diferença entra a implementação discutida anteriormente está que o número de trocas para entradas em ordem crescente e decrescente é diferente, tendo maior quantidade de trocas para a decrescente e menor para a entrada em ordem crescente. Observe o Gráfico \ref{graf:quick-central-troca}.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/quick-sort-pivo-central-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
 \addlegendentry{Aleatório}
@@ -799,40 +909,20 @@ xlabel=n elementos]
 \addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Número de trocas realizadas pelo algoritmo Quick Sort implementação com pivô central.}
 \label{graf:quick-central-troca}
-\end{tikzpicture}
-\end{center}
-\caption{Número de trocas realizadas pelo algoritmo Quick Sort implementação com pivô central}
-\end{figure}
-
-\subsubsection{Insertion Sort}
-
-\begin{figure}
-\begin{center}
-\pgfplotstableread{plots/swap/insertion-sort-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
-\begin{axis}[minor tick num=1,
-xlabel=n elementos]
-\addlegendentry{Aleatório}
-\addplot [black,very thick] table [x={n}, y={ale}] {\pistonkinetics};
-\addlegendentry{Crescente}
-\addplot [red,very thick] table [x={n}, y={cresc}] {\pistonkinetics};
-\addlegendentry{Decrescente}
-\addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{Número de trocas realizadas pelo algoritmo Insertion Sort}
 \end{figure}
 
 \subsubsection{Shell Sort}
 
 O Shell Sort não realiza nenhuma troca quando a entrada de dados está em ordem decrescente, a verificação presente no corpo do algoritmo garante isso. Contudo, para os outros demais casos existem uma quantidade de trocas significativa de comportamento não linear, porem quanto maior a dimensão da entra maior o número de trocas. A maior quantidade de trocas ocorre com a entrada em ordem decrescente e a segunda maior em ordem aleatória. Observe o Gráfico \ref{graf:shell-troca}.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/shell-sort-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
 \addlegendentry{Aleatório}
@@ -842,20 +932,20 @@ xlabel=n elementos]
 \addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
-\label{graf:shell-troca}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelo algoritmo Shell Sort}
+\caption{Número de trocas realizadas pelo algoritmo Shell Sort.}
+\label{graf:shell-troca}
 \end{figure}
 
 \subsubsection{Selection Sort}
 
 No algoritmo Selection Sort todas as quantidades de trocas tem valores bem espaçados entre as três configurações de entrada. Neste caso, a que menos realiza trocas são quando a entrada está em ordem crescente, neste caso, nenhuma troca é realizada, pois, o algoritmo verifica que os elementos já estão em ordem correta. Já nas duas demais configurações de entrada ocorrem um número de trocas acentuado, sendo o maior deles na entrada em ordem aleatória e a segundo maior na entrada em ordem decrescente. Observe o Gráfico \ref{graf:selection-troca}.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/selection-sort-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
 \addlegendentry{Aleatório}
@@ -865,20 +955,20 @@ xlabel=n elementos]
 \addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
-\label{graf:selection-troca}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelo algoritmo Selection Sort}
+\caption{Número de trocas realizadas pelo algoritmo Selection Sort.}
+\label{graf:selection-troca}
 \end{figure}
 
 \subsubsection{Merge Sort}
 
 O algoritmo Merge Sort independentemente da configuração de entrada sempre irá realizar o mesmo número de trocas em seu processo de ordenação. Assim, independente se a entrada contem elementos organizados em ordem aleatória, crescente ou decrescente, o número de troca será o mesmo. Vale ressaltar ainda que conforme a quantidade de elementos aumenta, maior será o número de trocas formando um comportamento linear. Observe o Gráfico \ref{graf:merge-troca}.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/merge-sort-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
 \addlegendentry{Aleatório}
@@ -888,10 +978,10 @@ xlabel=n elementos]
 \addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
-\label{graf:merge-troca}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelo algoritmo Merge Sort}
+\caption{Número de trocas realizadas pelo algoritmo Merge Sort.}
+\label{graf:merge-troca}
 \end{figure}
 
 \subsubsection{Heap Sort}
@@ -900,10 +990,10 @@ No caso do algoritmo Heap Sort, é constatado também que conforme o número de 
 
 Contudo, existe uma mínima diferença entre a quantidade de trocas em cada configuração de entrada. A menor quantidade de trocas acontece quando a entrada de dados são elementos em ordem decrescente, já a maior quantidade de trocas ocorre quando os elementos está dispostos em ordem aleatória, caso os elementos estejam em ordem aleatória a quantidade de trocas é menor que a crescente e maior que a de ordem decrescente. Observe o Gráfico \ref{graf:heap-troca}.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \pgfplotstableread{plots/swap/heap-sort-troca.dat}{\pistonkinetics}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1.3]
 \begin{axis}[minor tick num=1,
 xlabel=n elementos]
 \addlegendentry{Aleatório}
@@ -913,10 +1003,10 @@ xlabel=n elementos]
 \addlegendentry{Decrescente}
 \addplot [blue,very thick] table [x={n}, y={desc}] {\pistonkinetics};
 \end{axis}
-\label{graf:heap-troca}
 \end{tikzpicture}
 \end{center}
-\caption{Número de trocas realizadas pelo algoritmo Heap Sort}
+\caption{Número de trocas realizadas pelo algoritmo Heap Sort.}
+\label{graf:heap-troca}
 \end{figure}
 
 ~\\
@@ -927,20 +1017,16 @@ Em suma, este estudo experimental buscou analisar e comparar o desempenho de dif
 
 Os algoritmos \textit{Quick Sort} com pivô central, \textit{Shell Sort} e \textit{Heap Sort} apresentaram os melhores desempenhos dentro de suas respectivas abordagens de ordenação. Apesar de serem boas opções, vale ressaltar uma análise quanto ao contexto e necessidades da aplicação que tais algoritmos serão empregados, desse modo, desde implementações mais simples como o \textit{Insertion Sort} podem ser empregadas, principalmente em cenários que o conjunto de dados cresce por demanda, que nesse caso, é melhor opção devido a simplicidade e desempenho. Adicionalmente, vale lembrar o algoritmo \textit{Merge Sort} devido a estabilidade quanto a entrada de dados, porém, como ponto negativo, o consumo adicional de memória.
 
-%\begin{thebibliography}{1}
+\begin{thebibliography}{9}
 
-%https://www.opentechguides.com/how-to/article/c/51/bubble-sort-c.html
-%http://wiki.icmc.usp.br/images/b/b3/SCC501Cap4.pdf
-%https://pt.khanacademy.org/computing/computer-science/algorithms/merge-sort/p/challenge-implement-merge-sort
+\bibitem{ziviani} 
+ZIVIANI, Nivio. Projeto de Algoritmos: Com implementações em Pascal e C. São Paulo. Cengage Learning, 2011.
 
-%\bibitem{atlas}
-%Programa das Nações Unidas para o Desenvolvimento (PNUD). \emph{Atlas do desenvolvimento humano do Brasil}. PNUD; 2003. Disponível em: http://www.pnud.org.br/atlas/
+\bibitem{biggar}
+BIGGAR, Paul. GREGG, David. Sorting in the Presence of Branch Prediction
+and Caches Fast Sorting on Modern Computers. University of Dublin, 2005.
 
-%\bibitem{senak}
-%Sen AK. \emph{Desenvolvimento como liberdade}. São Paulo: Companhia das Letras; 2000.
-
-
-%\end{thebibliography}
+\end{thebibliography}
 
 % that's all folks
 \end{document}

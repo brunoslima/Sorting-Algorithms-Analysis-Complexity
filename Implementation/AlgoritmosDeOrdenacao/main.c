@@ -40,7 +40,7 @@ int main(void){
 
     //gerarArquivoElementosAleatorios();
 
-    GerarVetor(vetor, 3);
+    GerarVetor(vetor, 2);
 
     //ImprimeVetor(vetor);
 
@@ -54,7 +54,7 @@ int main(void){
     //BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
-    //InsertionSort(vetor);
+    InsertionSort(vetor);
     //ShellSort(vetor);
     //SelectionSort(vetor);
     //MergeSort(vetor, 0, MAX);
