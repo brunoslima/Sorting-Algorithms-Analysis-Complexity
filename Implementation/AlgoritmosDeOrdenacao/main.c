@@ -1,12 +1,12 @@
 /*----------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------      PROGRAMA DE P”S-GRADUA«√O EM CI NCIA DA COMPUTA«√O      ------------------------------*/
+/*--------------------------      PROGRAMA DE P√ìS-GRADUA√á√ÉO EM CI√äNCIA DA COMPUTA√á√ÉO      ------------------------------*/
 /*--------------------------                         DSICIPLINA:                          ------------------------------*/
-/*--------------------------                AN¡LISE E PROJETO DE ALGORITMOS               ------------------------------*/
+/*--------------------------                AN√ÅLISE E PROJETO DE ALGORITMOS               ------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------                      TRABALHO PR¡TICO 01                     ------------------------------*/
-/*--------------------------              AN¡LISE DOS ALGORITMOS DE ORDENA«√O             ------------------------------*/
+/*--------------------------                      TRABALHO PR√ÅTICO 01                     ------------------------------*/
+/*--------------------------              AN√ÅLISE DOS ALGORITMOS DE ORDENA√á√ÉO             ------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------                           AUTORES:                           ------------------------------*/
@@ -15,22 +15,23 @@
 /*----------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------------*/
 
-#include "OrdenaÁ„o.h"
+#include "Ordenacao.h"
+#include "Ordenacao.c"
 
-#include <stdio.h>
+#include <stdio.h>  
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
-#include <windows.h>
+//#include <windows.h>
 
 int main(void){
 
     setlocale(LC_ALL, "PORTUGUESE");
-    system("title An·lise dos Algoritmos de OrdenaÁ„o");
+    system("title An√°lise dos Algoritmos de Ordena√ß√£o");
 
     time_t t;
-    LARGE_INTEGER li;
-    double frequencia, inicio, fim;
+    //LARGE_INTEGER li;
+    //double frequencia, inicio, fim;
 
     srand((unsigned) time(&t));
 
@@ -45,13 +46,13 @@ int main(void){
     //ImprimeVetor(vetor);
 
     //Inicio
-    QueryPerformanceFrequency(&li);
-    frequencia = (double)li.QuadPart/1000.0;
-    QueryPerformanceCounter(&li);
-    inicio = li.QuadPart;
+    //QueryPerformanceFrequency(&li);
+    //frequencia = (double)li.QuadPart/1000.0;
+    //QueryPerformanceCounter(&li);
+    //inicio = li.QuadPart;
 
     //BubbleSort(vetor);
-    //BubbleSortAdvanced(vetor);
+    BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
     //InsertionSort(vetor);
@@ -60,15 +61,17 @@ int main(void){
     //MergeSort(vetor, 0, MAX);
     //HeapSort(vetor);
 
-    QueryPerformanceCounter(&li);
-    fim = li.QuadPart;
+    //QueryPerformanceCounter(&li);
+    //fim = li.QuadPart;
 
     //Fim
-    double tempo = (double)(fim - inicio)/frequencia;
+    //double tempo = (double)(fim - inicio)/frequencia;
     //ImprimeVetor(vetor); //Vetor Ordenado
 
-    printf("\n\n Tempo (ms): %.18f\n", tempo);
-    printf("\n\n Trocas: %lu", contadorTroca);
+    //printf("\n\n Tempo (ms): %.18f\n", tempo);
+    printf("Algoritmo: BubbleSortAdvanced Aleatorio");
+    printf("\n Tamanho: %d", MAX);
+    printf("\n\n Trocas: %lu\n", contadorTroca);
 
     //system("PAUSE");
     return(0);
