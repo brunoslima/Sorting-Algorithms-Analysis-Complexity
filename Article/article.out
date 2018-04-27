@@ -1,0 +1,44 @@
+\BOOKMARK [1][-]{section.1}{Introdu\347\343o}{}% 1
+\BOOKMARK [1][-]{section.2}{Algoritmos de Ordena\347\343o}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Algoritmos baseados em Troca}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Bubble Sort}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Quick Sort}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Algoritmos baseados em Inser\347\343o}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Insertion Sort}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Shell Sort}{subsection.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Algoritmos baseados em Sele\347\343o}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Selection Sort}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Heap Sort}{subsection.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.4}{Algoritmos baseados em Intercala\347\343o}{section.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Merge Sort}{subsection.2.4}% 13
+\BOOKMARK [1][-]{section.3}{An\341lise Experimental}{}% 14
+\BOOKMARK [2][-]{subsection.3.1}{Modelos de entrada de dados}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Entrada crescente}{subsection.3.1}% 16
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Entrada decrescente}{subsection.3.1}% 17
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Entrada aleat\363ria}{subsection.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.2}{Comparativo por algoritmo}{section.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Insertion Sort}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Shell Sort}{subsection.3.2}% 21
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Selection Sort}{subsection.3.2}% 22
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Heap Sort}{subsection.3.2}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Bubble Sort}{subsection.3.2}% 24
+\BOOKMARK [3][-]{subsubsection.3.2.6}{Quick Sort}{subsection.3.2}% 25
+\BOOKMARK [3][-]{subsubsection.3.2.7}{Merge Sort}{subsection.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.3}{Comparativo de abordagem}{section.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Abordagem de inser\347\343o}{subsection.3.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Abordagem de troca}{subsection.3.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Abordagem de sele\347\343o}{subsection.3.3}% 30
+\BOOKMARK [1][-]{section.4}{An\341lise quantidade de trocas realizadas}{}% 31
+\BOOKMARK [2][-]{subsubsection.4.0.1}{Entrada aleat\363ria}{section.4}% 32
+\BOOKMARK [3][-]{subsubsection.4.0.2}{Entrada crescente}{subsubsection.4.0.1}% 33
+\BOOKMARK [3][-]{subsubsection.4.0.3}{Entrada decrescente}{subsubsection.4.0.1}% 34
+\BOOKMARK [2][-]{subsection.4.1}{An\341lise n\372mero de trocas por algoritmo}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Bubble Sort e Insertion Sort}{subsection.4.1}% 36
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Quick Sort Piv\364 inicial}{subsection.4.1}% 37
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Quick Sort Piv\364 Central}{subsection.4.1}% 38
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Shell Sort}{subsection.4.1}% 39
+\BOOKMARK [3][-]{subsubsection.4.1.5}{Selection Sort}{subsection.4.1}% 40
+\BOOKMARK [3][-]{subsubsection.4.1.6}{Merge Sort}{subsection.4.1}% 41
+\BOOKMARK [3][-]{subsubsection.4.1.7}{Heap Sort}{subsection.4.1}% 42
+\BOOKMARK [1][-]{section.5}{Considera\347\365es Finais}{}% 43
+\BOOKMARK [1][-]{section*.1}{REFER\312NCIAS}{}% 44

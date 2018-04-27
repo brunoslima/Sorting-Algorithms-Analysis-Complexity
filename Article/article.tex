@@ -8,6 +8,7 @@
 %\usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{float}
+\usepackage[pdftex]{hyperref}
 
 \usepackage{filecontents,pgfplots}
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -72,7 +73,7 @@ Presidente Prudente, Brasil \\
 
 \section{Introdução}
 
-Diversas aplicações da atualidade envolvem um grande volume de dados, desde aplicações comerciais simples a grande aplicações científicas, todas estão nesse contexto. A organização estrutural de conjunto de dados, além de prover melhor usabilidade, também otimiza tempo e o consumo de recursos, tanto de processamento quanto de memória para a execução.
+Diversas aplicações da atualidade envolvem um grande volume de dados, desde aplicações comerciais simples a grande aplicações científicas. A organização estrutural de conjuntos de dados e sua ordenação, além de prover melhor usabilidade, também otimiza tempo e o consumo de recursos, tanto de processamento quanto de memória para a execução.
 
 Neste contexto, este trabalho apresenta uma análise dos principais algoritmos de ordenação, o qual está dividido nas seguintes seções: na Seção 2, são apresentados os algoritmos de ordenação utilizados, indicando a abordagem utilizada no processo juntamente com a sua respectiva análise assintótica. Na Seção 3, são apresentadas as análises experimental aplicadas em conjuntos de entradas com configurações variadas. A Seção 4 apresenta brevemente uma comparação do número de trocas que cada algoritmo realiza para ordenar cada conjunto de entrada. Por fim, na Seção 5, são apresentadas as considerações finais do estudo.
 
@@ -82,7 +83,7 @@ Neste contexto, este trabalho apresenta uma análise dos principais algoritmos d
 
 \subsection{Algoritmos baseados em Troca}
 
-
+~\\
 \subsubsection{Bubble Sort}
 
 O presente algoritmo utilizada a abordagem de troca, através da permutação de elementos vizinhos, seguindo a ideia de densidade dos elementos, em que pode-se optar por varrer o arranjo levando o maior elemento (mais pesado) ao fim do vetor, ou conduzir o menor elemento (mais leve) ao início desse. Esse passo (uma das duas opções excludentemente) é realizado sucessivamente para os subvetores não ordenados remanescentes até que o vetor esteja ordenado como um todo \cite{biggar}.
@@ -92,7 +93,7 @@ A abordagem original prevê que todos os elementos adjacentes sejam comparados a
 \begin{figure}[H]
 
   \centering
-    \includegraphics[width=0.6\textwidth]{images/bubble.png}
+    \includegraphics[width=0.5\textwidth]{images/bubble.png}
     \caption{Modelo de comparação de elementos adjacentes.}        		   \label{image:modelo}
 \end{figure}
 
@@ -121,10 +122,10 @@ Complexidade:
 \item \textbf{Pior caso:} $O (n^2)$, em geral para o pivô mínimo e máximo.
 \end{itemize}
 
-
 ~\\
 \subsection{Algoritmos baseados em Inserção}
 
+~\\
 \subsubsection{Insertion Sort}
 
 A estratégia de ordenação por inserção consiste em um dos métodos mais simples, sendo extremamente eficiente em conjuntos pequenos, com estratégia de percorrer o esquerdo da esquerda para a direita deixando os elementos ordenados  à esquerda. Uma situação cotidiana que aplica a abordagem referida é a inserção de cartas na mão de um jogador, seguindo a estrutura de dados deque \cite{biggar}.\\
@@ -146,7 +147,7 @@ O grande diferencial desse método é a utilização dos saltos, porém não exi
 \begin{figure}[H]
 
   \centering
-    \includegraphics[width=0.8\textwidth]{images/shell.jpg}
+    \includegraphics[width=0.75\textwidth]{images/shell.jpg}
      \caption{Modelo de partições com elementos distantes em diferentes tamanhos.}
       \label{image:shell}
 \end{figure}
@@ -160,7 +161,7 @@ Complexidade:
 ~\\
 \subsection{Algoritmos baseados em Seleção}
 
-
+~\\
 \subsubsection{Selection Sort}
 
 O algoritmo Selection Sort, trata-se modelo mais básico de algoritmo de ordenação, utilizada muitas em ambientes naturais e é mais intuitivo para os seres humanos, pois se utiliza da abordagem de força bruta, sem aproveitar nenhuma peculiaridade do conjunto de dados ou vantagem que possa ser tomada. Sua estratégia consiste em percorrer todo o arranjo $n$, comparando todos os elementos de forma a encontrar o menor, em seguida, o segundo menor e assim por diante, de modo a organizar todo o conjunto \cite{ziviani}\cite{biggar}.
@@ -197,6 +198,7 @@ Complexidade:
 ~\\
 \subsection{Algoritmos baseados em Intercalação}
 
+~\\
 \subsubsection{Merge Sort}
 
 Este algoritmo utiliza o princípio de divisão e conquista, de modo a quebrar um problema complexo em sub-problemas, até o caso base (restante um ou dois elementos no sub-vetor), de modo que seja possível ordená-los. A partir da garantia de que todos os sub-arranjos estão ordenadas, inicia-se o processo de combinação entre eles, de modo recursivo, até alcançar o problema original, de modo ordenado \cite{sedgewick}.
@@ -632,7 +634,7 @@ Além da análise experimental que visa comparar os tempos de execução entre o
 
 \subsubsection{Entrada aleatória}
 
-A Figura \ref{graf:trocas-aleatoria} apresenta um gráfico que contem o número de trocas de todos os algoritmos. Nesta figura é possivel observar em amarelo representado pelo Insertion Sort que realiza um maior número de trocas, existe uma sobreposição na linha em amarelo, pois o Bubble Sort e o Bubble Sort também tem exatamente o mesmo comportamento que o Insertion Sort, além desses o Shell Sort também realiza um número grande de trocas. Os demais algoritmos não são possíveis de ser observados nesta imagem, por terem número de trocas bem menores, assim eles foram colocados isoladamente na Figura \ref{graf:trocas-aleatoria-menores}.
+A Figura \ref{graf:trocas-aleatoria} apresenta um gráfico que contem o número de trocas de todos os algoritmos. Nesta figura é possivel observar em amarelo representado pelo Insertion Sort que realiza um maior número de trocas, existe uma sobreposição na linha em amarelo, pois o Bubble Sort e o Bubble Sort também tem exatamente o mesmo comportamento que o Insertion Sort, sendos os algoritmos que mais realizam trocas para está configuração de entrada. Além desses, o Shell Sort também realiza um número grande de trocas. Os demais algoritmos não são possíveis de ser observados nesta imagem, por terem número de trocas bem menores, assim eles foram colocados isoladamente na Figura \ref{graf:trocas-aleatoria-menores}.
 
 \begin{figure}[H]
 \begin{center}
@@ -690,7 +692,7 @@ Na Figura \ref{graf:trocas-aleatoria-menores} é possível observar os algoritmo
 
 \subsubsection{Entrada crescente}
 
-A Figura \ref{graf:trocas-crescente} apresenta um gráfico com o comportamento em relação ao número de trocas para uma entrada crescente. Contudo visualiza-los todos juntos causa uma certa sobreposição. Para melhorar a visualização das análises foram exibidos juntos os algoritmos que mais fazem trocas, os que menos fazem trocas e os que fazem trocas em valores intermediários com relação aos que mais fazem ou que menos fazem.
+A Figura \ref{graf:trocas-crescente} apresenta um gráfico com o comportamento em relação ao número de trocas para uma entrada crescente. Contudo visualiza-los todos juntos causa uma certa sobreposição. Para melhorar a visualização das análises foram exibidos juntos os algoritmos que mais realizam trocas, depois os que menos realizam trocas e por fim os que realizam um número total de trocas com valores intermediários com relação aos que mais e menos realizam trocas.
 
 \begin{figure}[H]
 \begin{center}
@@ -844,11 +846,12 @@ Na Figura anterior não foi possível observar com exatidão o numero de trocas 
 
 Após observar o comportamento do número de trocas com uma visão de todos os algoritmos juntos, agora é exposto esse comportamento considerando cada algoritmo individualmente, afim de perceber as diferenças existentes nos três tipos distintos de entradas (aleatório, crescente e decrescente).
 
+~\\
 \subsubsection{Bubble Sort e Insertion Sort}
 
 Considerando o número de trocas necessário para ordenar um conjunto de dados, após a análise realizada foi constatado que os algoritmos implementados: Bubble Sort (implementação clássica e melhorada) e Insertion Sort, tiveram o mesmo comportamento, ou seja, o mesmo número de trocas. Tal comportamento pode ser observado na Figura \ref{graf:bubble-sort-melhorado-troca}.
 
-Para a entrada crescente nenhuma troca foi realizada como era esperado, contudo para a entrada organizada em ordem decrescente tem-se um grande número de trocas para ordenar conjuntos maiores que 500000. A entrada aleatória é a que mais realiza trocas em conjuntos menores que 500000 elementos, porém para conjuntos maiores que isso a entrada decrescente passa a ter um número maior de trocas. Acredita-se que este comportamento ocorre devido ao conjunto com 1 milhão de elementos dispostos aleatoriamente por coincidência não seja necessário tantas trocas para ordena-lo.
+Para a entrada crescente nenhuma troca foi realizada como era esperado, contudo para a entrada organizada em ordem decrescente tem-se um grande número de trocas principalmente para ordenar conjuntos maiores que 500000, sendo para conjuntos de entrada em ordem decrescente o pior caso de trocas realizadas. A entrada aleatória realiza um número menor de trocas se comparado com uma entrada com elementos em ordem descrescente, porem ainda assim realiza uma quantidade de trocas consideráveis, sendo bem maior que para entradas em ordem crescente que não realiza nenhuma troca.
 
 \begin{figure}[H]
 \begin{center}
@@ -871,7 +874,7 @@ xlabel=n elementos]
 
 \subsubsection{Quick Sort Pivô inicial}
 
-O algoritmo Quick Sort com implementação colocando sempre o pivô como ponto inicial tem números de trocas que apresentam comportamento linear. O maior número de trocas ocorre quando a entrada está organizada em ordem aleatória, entretanto os casos em que a entrada está em ordem crescente ou decrescente a quantidade de trocas é a mesma para essas duas entradas, vale ressaltar ainda que a quantidade de trocas na entrada em ordem aleatória é bem maior que a quantidade de trocas nas duas outras configurações de entrada. Observe o Gráfico \ref{graf:quick-inicial-troca}
+O algoritmo Quick Sort com implementação colocando sempre o pivô como ponto inicial tem números de trocas que apresentam comportamento linear. O maior número de trocas ocorre quando a entrada está organizada em ordem aleatória, entretanto os casos em que a entrada está em ordem crescente ou decrescente a quantidade de trocas é a mesma para essas duas entradas, vale ressaltar ainda que a quantidade de trocas na entrada em ordem aleatória é bem maior que a quantidade de trocas nas duas outras configurações de entrada. Observe o gráfico apresentado na Figura \ref{graf:quick-inicial-troca}.
 
 \begin{figure}[H]
 \begin{center}
@@ -894,7 +897,7 @@ xlabel=n elementos]
 
 \subsubsection{Quick Sort Pivô Central}
 
-Quando o algoritmo Quick Sort é implementado com o pivo sendo sempre o elemento central o comportamento de número de trocas é diferente a implementação com pivô sendo sempre o inicial. Neste caso, o maior número de trocas absoluto continua sendo para a entrada organizada de modo aleatório, contudo a diferença entra a implementação discutida anteriormente está que o número de trocas para entradas em ordem crescente e decrescente é diferente, tendo maior quantidade de trocas para a decrescente e menor para a entrada em ordem crescente. Observe o Gráfico \ref{graf:quick-central-troca}.
+Quando o algoritmo Quick Sort é implementado com o pivo sendo sempre o elemento central o comportamento de número de trocas é diferente a implementação com pivô sendo sempre o inicial. Neste caso, o maior número de trocas absoluto continua sendo para a entrada organizada de modo aleatório, contudo a diferença entra a implementação discutida anteriormente está que o número de trocas para entradas em ordem crescente e decrescente é diferente, tendo maior quantidade de trocas para a decrescente e menor para a entrada em ordem crescente. Observe o gráfico apresentado na Figura \ref{graf:quick-central-troca}.
 
 \begin{figure}[H]
 \begin{center}
@@ -917,7 +920,7 @@ xlabel=n elementos]
 
 \subsubsection{Shell Sort}
 
-O Shell Sort não realiza nenhuma troca quando a entrada de dados está em ordem decrescente, a verificação presente no corpo do algoritmo garante isso. Contudo, para os outros demais casos existem uma quantidade de trocas significativa de comportamento não linear, porem quanto maior a dimensão da entra maior o número de trocas. A maior quantidade de trocas ocorre com a entrada em ordem decrescente e a segunda maior em ordem aleatória. Observe o Gráfico \ref{graf:shell-troca}.
+O Shell Sort não realiza nenhuma troca quando a entrada de dados está em ordem decrescente, a verificação presente no corpo do algoritmo garante isso. Contudo, para os outros demais casos existem uma quantidade de trocas significativa de comportamento não linear, porem quanto maior a dimensão da entra maior o número de trocas. A maior quantidade de trocas ocorre com a entrada em ordem decrescente e a segunda maior em ordem aleatória. Observe o gráfico apresentado na Figura \ref{graf:shell-troca}.
 
 \begin{figure}[H]
 \begin{center}
@@ -940,7 +943,7 @@ xlabel=n elementos]
 
 \subsubsection{Selection Sort}
 
-No algoritmo Selection Sort todas as quantidades de trocas tem valores bem espaçados entre as três configurações de entrada. Neste caso, a que menos realiza trocas são quando a entrada está em ordem crescente, neste caso, nenhuma troca é realizada, pois, o algoritmo verifica que os elementos já estão em ordem correta. Já nas duas demais configurações de entrada ocorrem um número de trocas acentuado, sendo o maior deles na entrada em ordem aleatória e a segundo maior na entrada em ordem decrescente. Observe o Gráfico \ref{graf:selection-troca}.
+No algoritmo Selection Sort todas as quantidades de trocas tem valores bem espaçados entre as três configurações de entrada. Neste caso, a que menos realiza trocas são quando a entrada está em ordem crescente, neste caso, nenhuma troca é realizada, pois, o algoritmo verifica que os elementos já estão em ordem correta. Já nas duas demais configurações de entrada ocorrem um número de trocas acentuado, sendo o maior deles na entrada em ordem aleatória e a segundo maior na entrada em ordem decrescente. Observe o gráfico apresentado na Figura \ref{graf:selection-troca}.
 
 \begin{figure}[H]
 \begin{center}
@@ -963,7 +966,7 @@ xlabel=n elementos]
 
 \subsubsection{Merge Sort}
 
-O algoritmo Merge Sort independentemente da configuração de entrada sempre irá realizar o mesmo número de trocas em seu processo de ordenação. Assim, independente se a entrada contem elementos organizados em ordem aleatória, crescente ou decrescente, o número de troca será o mesmo. Vale ressaltar ainda que conforme a quantidade de elementos aumenta, maior será o número de trocas formando um comportamento linear. Observe o Gráfico \ref{graf:merge-troca}.
+O algoritmo Merge Sort independentemente da configuração de entrada sempre irá realizar o mesmo número de trocas em seu processo de ordenação. Assim, independente se a entrada contem elementos organizados em ordem aleatória, crescente ou decrescente, o número de troca será o mesmo. Vale ressaltar ainda que conforme a quantidade de elementos aumenta, maior será o número de trocas formando um comportamento linear. Observe o gráfico apresentado na Figura \ref{graf:merge-troca}.
 
 \begin{figure}[H]
 \begin{center}
@@ -988,7 +991,7 @@ xlabel=n elementos]
 
 No caso do algoritmo Heap Sort, é constatado também que conforme o número de elementos a serem ordenados aumentam maior será o número de trocas em todas as configurações de entrada, formando um comportamento bem próximo ao linear. 
 
-Contudo, existe uma mínima diferença entre a quantidade de trocas em cada configuração de entrada. A menor quantidade de trocas acontece quando a entrada de dados são elementos em ordem decrescente, já a maior quantidade de trocas ocorre quando os elementos está dispostos em ordem aleatória, caso os elementos estejam em ordem aleatória a quantidade de trocas é menor que a crescente e maior que a de ordem decrescente. Observe o Gráfico \ref{graf:heap-troca}.
+Contudo, existe uma mínima diferença entre a quantidade de trocas em cada configuração de entrada. A menor quantidade de trocas acontece quando a entrada de dados são elementos em ordem decrescente, já a maior quantidade de trocas ocorre quando os elementos está dispostos em ordem aleatória, caso os elementos estejam em ordem aleatória a quantidade de trocas é menor que a crescente e maior que a de ordem decrescente. Observe o gráfico apresentado na Figura \ref{graf:heap-troca}.
 
 \begin{figure}[H]
 \begin{center}
@@ -1013,7 +1016,7 @@ xlabel=n elementos]
 
 \section{Considerações Finais}
 
-Em suma, este estudo experimental buscou analisar e comparar o desempenho de diferentes abordagens e algoritmos de ordenação com o intuito de identificar características e melhores situações para utilização de cada método.
+Em suma, este estudo experimental buscou analisar e comparar o desempenho de diferentes abordagens e algoritmos de ordenação com o intuito de identificar características e melhores situações para utilização de cada método. Todas as análises, planilhas e implementações realizadas para a elaboração deste trabalho podem ser encontradas em: \url{https://github.com/brunoslima/Sorting-Algorithms-Analysis-Complexity}.
 
 Os algoritmos \textit{Quick Sort} com pivô central, \textit{Shell Sort} e \textit{Heap Sort} apresentaram os melhores desempenhos dentro de suas respectivas abordagens de ordenação. Apesar de serem boas opções, vale ressaltar uma análise quanto ao contexto e necessidades da aplicação que tais algoritmos serão empregados, desse modo, desde implementações mais simples como o \textit{Insertion Sort} podem ser empregadas, principalmente em cenários que o conjunto de dados cresce por demanda, que nesse caso, é melhor opção devido a simplicidade e desempenho. Adicionalmente, vale lembrar o algoritmo \textit{Merge Sort} devido a estabilidade quanto a entrada de dados, porém, como ponto negativo, o consumo adicional de memória.
 
