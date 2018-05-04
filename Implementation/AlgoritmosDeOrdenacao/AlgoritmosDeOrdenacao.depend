@@ -15,8 +15,8 @@
 	<time.h>
 	<windows.h>
 
-1524770420 source:c:\users\bruno\trabalho\mestrado - ciência da computação - unesp\disciplinas\analise e projeto de algoritmos\trabalhos\tp1\sorting-algorithms-analysis-complexity\implementation\algoritmosdeordenacao\main.c
-	"Ordenação.h"
+1525438914 source:c:\users\bruno\trabalho\mestrado - ciência da computação - unesp\disciplinas\analise e projeto de algoritmos\trabalhos\tp1\sorting-algorithms-analysis-complexity\implementation\algoritmosdeordenacao\main.c
+	"Ordenacao.c"
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
@@ -27,6 +27,20 @@
 
 1524676431 source:c:\users\bruno\trabalho\mestrado - ciência da computação - unesp\disciplinas\analise e projeto de algoritmos\trabalhos\tp1\sorting-algorithms-analysis-complexity\implementation\algoritmosdeordenacao\ordenação.c
 	"Ordenação.h"
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1525439114 c:\users\bruno\trabalho\mestrado - ciência da computação - unesp\disciplinas\analise e projeto de algoritmos\trabalhos\tp1\sorting-algorithms-analysis-complexity\implementation\algoritmosdeordenacao\ordenacao.h
+
+1525438767 c:\users\bruno\trabalho\mestrado - ciência da computação - unesp\disciplinas\analise e projeto de algoritmos\trabalhos\tp1\sorting-algorithms-analysis-complexity\implementation\algoritmosdeordenacao\ordenacao.c
+	"Ordenacao.h"
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1525438767 source:c:\users\bruno\trabalho\mestrado - ciência da computação - unesp\disciplinas\analise e projeto de algoritmos\trabalhos\tp1\sorting-algorithms-analysis-complexity\implementation\algoritmosdeordenacao\ordenacao.c
+	"Ordenacao.h"
 	<time.h>
 	<stdio.h>
 	<stdlib.h>

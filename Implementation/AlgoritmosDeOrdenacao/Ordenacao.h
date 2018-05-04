@@ -1,18 +1,14 @@
 #ifndef ORDENACAO_
 #define ORDENACAO_
 
-//#define MAX 10
+#define MAX 10
 //#define MAX 100
 //#define MAX 1000
 //#define MAX 10000
 //#define MAX 100000
-<<<<<<< HEAD:Implementation/AlgoritmosDeOrdenacao/Ordenacao.h
-#define MAX 500000
-//#define MAX 1000000
-=======
 //#define MAX 500000
-#define MAX 1000000
->>>>>>> 13a526c9ab609b3ce5e71b82a4ee1f13b1408985:Implementation/AlgoritmosDeOrdenacao/Ordenação.h
+//#define MAX 1000000
+
 
 unsigned long int contadorTroca;
 

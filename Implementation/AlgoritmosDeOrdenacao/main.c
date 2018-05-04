@@ -16,13 +16,12 @@
 /*----------------------------------------------------------------------------------------------------------------------*/
 
 #include "Ordenacao.h"
-#include "Ordenacao.c"
 
-#include <stdio.h>  
+#include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
-//#include <windows.h>
+#include <windows.h>
 
 int main(void){
 
@@ -30,8 +29,8 @@ int main(void){
     system("title Análise dos Algoritmos de Ordenação");
 
     time_t t;
-    //LARGE_INTEGER li;
-    //double frequencia, inicio, fim;
+    LARGE_INTEGER li;
+    double frequencia, inicio, fim;
 
     srand((unsigned) time(&t));
 
@@ -40,36 +39,35 @@ int main(void){
     inicializarContadorTroca();
 
     //gerarArquivoElementosAleatorios();
+    GerarVetor(vetor, 1); /** Parâmetro número: 1 crescente, 2 decrescente e 3 aleatório**/
 
-    GerarVetor(vetor, 2);
-
-    //ImprimeVetor(vetor);
+    ImprimeVetor(vetor); /** Comente está linha para facilitar a execução em conjuntos maiores **/
 
     //Inicio
-    //QueryPerformanceFrequency(&li);
-    //frequencia = (double)li.QuadPart/1000.0;
-    //QueryPerformanceCounter(&li);
-    //inicio = li.QuadPart;
+    QueryPerformanceFrequency(&li);
+    frequencia = (double)li.QuadPart/1000.0;
+    QueryPerformanceCounter(&li);
+    inicio = li.QuadPart;
 
-    //BubbleSort(vetor);
-    BubbleSortAdvanced(vetor);
+    BubbleSort(vetor);
+    //BubbleSortAdvanced(vetor);
     //QuickSortPivoInicio(vetor, 0, MAX);
     //QuickSortPivoCentral(vetor, MAX);
-    InsertionSort(vetor);
+    //InsertionSort(vetor);
     //ShellSort(vetor);
     //SelectionSort(vetor);
     //MergeSort(vetor, 0, MAX);
     //HeapSort(vetor);
 
-    //QueryPerformanceCounter(&li);
-    //fim = li.QuadPart;
+    QueryPerformanceCounter(&li);
+    fim = li.QuadPart;
 
     //Fim
-    //double tempo = (double)(fim - inicio)/frequencia;
-    //ImprimeVetor(vetor); //Vetor Ordenado
+    double tempo = (double)(fim - inicio)/frequencia;
 
-    //printf("\n\n Tempo (ms): %.18f\n", tempo);
-    printf("Algoritmo: BubbleSortAdvanced Aleatorio");
+    ImprimeVetor(vetor); /** Comente está linha para facilitar a execução em conjuntos maiores **/ //Vetor Ordenado
+
+    printf("\n\n Tempo (ms): %.18f\n", tempo);
     printf("\n Tamanho: %d", MAX);
     printf("\n\n Trocas: %lu\n", contadorTroca);
 
